@@ -1,0 +1,1330 @@
+<!DOCTYPE html>
+<html lang="it" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medicleo — Restare a casa, in sicurezza. Anche quando si invecchia.</title>
+    <meta name="description" content="Medicleo veglia giorno e notte su anziani e persone fragili con un sensore radar non invasivo: allerte immediate a familiari e operatori, senza telecamere e senza nulla da indossare.">
+
+    <!-- Google Fonts: Fraunces, Plus Jakarta Sans & JetBrains Mono -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=JetBrains+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        serif: ['Fraunces', 'Georgia', 'serif'],
+                        sans: ['Plus Jakarta Sans', 'system-ui', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'monospace'],
+                    },
+                    colors: {
+                        alabaster: '#F8F9F7',
+                        clinicalTeal: '#0F3D3E',
+                        clinicalTealDark: '#092829',
+                        sageTeal: '#1D6F6B',
+                        warmStone: '#E2E6E1',
+                        inkDark: '#121817',
+                        inkSecondary: '#4A5754',
+                        sandNote: '#FBF7EE',
+                        sandBorder: '#EAD9B7',
+                        amberAccent: '#B45309',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            background-color: #F8F9F7;
+            color: #121817;
+            overflow-x: hidden;
+        }
+
+        /* Subtle Architectural Grid Surface */
+        .bg-clinical-grid {
+            background-color: #F8F9F7;
+            background-image:
+                linear-gradient(to right, rgba(15, 61, 62, 0.04) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(15, 61, 62, 0.04) 1px, transparent 1px);
+            background-size: 32px 32px;
+        }
+
+        /* Radar Wave Pulse Animation */
+        @keyframes radarSweep {
+            0% {
+                transform: scale(0.75);
+                opacity: 0.65;
+            }
+            100% {
+                transform: scale(1.85);
+                opacity: 0;
+            }
+        }
+        .radar-wave {
+            transform-origin: center;
+            animation: radarSweep 3.2s cubic-bezier(0.16, 1, 0.3, 1) infinite;
+        }
+        .radar-wave-delayed {
+            transform-origin: center;
+            animation: radarSweep 3.2s cubic-bezier(0.16, 1, 0.3, 1) 1.6s infinite;
+        }
+
+        /* Editorial Card Hover */
+        .care-card {
+            transition: transform 0.28s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.28s ease, border-color 0.28s ease;
+        }
+        .care-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 18px 34px -16px rgba(15, 61, 62, 0.14);
+            border-color: rgba(29, 111, 107, 0.35);
+        }
+
+        /* Reveal Transition */
+        .reveal {
+            opacity: 0;
+            transform: translateY(16px);
+            transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body class="antialiased bg-clinical-grid selection:bg-clinicalTeal selection:text-white">
+
+    <!-- =========================================================
+         SKIP TO CONTENT LINK
+    ========================================================== -->
+    <a href="#main-content" class="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-[60] focus:px-4 focus:py-2 focus:rounded-xl focus:bg-clinicalTeal focus:text-white focus:font-semibold focus:shadow-lg">
+        Vai al contenuto
+    </a>
+
+    <!-- =========================================================
+         STICKY ARCHITECTURAL NAVIGATION BAR
+    ========================================================== -->
+    <header class="sticky top-0 z-50 bg-alabaster/90 backdrop-blur-xl border-b border-warmStone">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                
+                <!-- Brand Logo -->
+                <a href="#" class="flex items-center gap-3 group focus:outline-none">
+                    <div class="w-10 h-10 rounded-xl bg-clinicalTeal text-white flex items-center justify-center shadow-sm group-hover:bg-sageTeal transition-colors">
+                        <!-- Radar Pulse Brand Icon -->
+                        <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <circle cx="12" cy="12" r="2.5" fill="currentColor" stroke="none"/>
+                            <path d="M16.24 7.76a6 6 0 0 1 0 8.49m-8.48-.01a6 6 0 0 1 0-8.49m11.31-2.82a10 10 0 0 1 0 14.14m-14.14 0a10 10 0 0 1 0-14.14" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                    </div>
+                    <span class="font-sans font-extrabold text-xl tracking-tight text-clinicalTeal">Medicleo</span>
+                </a>
+
+                <!-- Desktop Navigation (Exact 6 Links) -->
+                <nav class="hidden lg:flex items-center gap-1 xl:gap-2" aria-label="Navigazione principale">
+                    <a href="#problema" class="px-3.5 py-2 rounded-xl text-sm font-semibold text-inkDark/80 hover:text-clinicalTeal hover:bg-clinicalTeal/5 transition-colors">Perché a casa</a>
+                    <a href="#soluzione" class="px-3.5 py-2 rounded-xl text-sm font-semibold text-inkDark/80 hover:text-clinicalTeal hover:bg-clinicalTeal/5 transition-colors">La soluzione</a>
+                    <a href="#per-chi" class="px-3.5 py-2 rounded-xl text-sm font-semibold text-inkDark/80 hover:text-clinicalTeal hover:bg-clinicalTeal/5 transition-colors">Per chi</a>
+                    <a href="#risparmio" class="px-3.5 py-2 rounded-xl text-sm font-semibold text-inkDark/80 hover:text-clinicalTeal hover:bg-clinicalTeal/5 transition-colors">Il risparmio</a>
+                    <a href="#assistenza-domiciliare" class="px-3.5 py-2 rounded-xl text-sm font-semibold text-inkDark/80 hover:text-clinicalTeal hover:bg-clinicalTeal/5 transition-colors">Assistenza a domicilio</a>
+                    <a href="#contatti" class="px-3.5 py-2 rounded-xl text-sm font-semibold text-inkDark/80 hover:text-clinicalTeal hover:bg-clinicalTeal/5 transition-colors">Contatti</a>
+                </nav>
+
+                <!-- Primary CTA + Mobile Toggle -->
+                <div class="flex items-center gap-3">
+                    <a href="#contatti" class="hidden sm:inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-clinicalTeal hover:bg-sageTeal text-white text-sm font-semibold shadow-sm transition-colors">
+                        <span>Richiedi una demo</span>
+                    </a>
+
+                    <button id="mobile-menu-btn" aria-label="Apri menu" class="lg:hidden p-2.5 rounded-xl bg-white border border-warmStone text-clinicalTeal hover:bg-sandNote transition-colors">
+                        <svg id="mobile-icon-open" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                        </svg>
+                        <svg id="mobile-icon-close" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Drawer -->
+        <div id="mobile-drawer" class="hidden lg:hidden bg-alabaster border-t border-warmStone px-4 pt-3 pb-6 space-y-1">
+            <a href="#problema" class="mobile-link block px-4 py-3 rounded-xl text-base font-semibold text-inkDark hover:bg-white">Perché a casa</a>
+            <a href="#soluzione" class="mobile-link block px-4 py-3 rounded-xl text-base font-semibold text-inkDark hover:bg-white">La soluzione</a>
+            <a href="#per-chi" class="mobile-link block px-4 py-3 rounded-xl text-base font-semibold text-inkDark hover:bg-white">Per chi</a>
+            <a href="#risparmio" class="mobile-link block px-4 py-3 rounded-xl text-base font-semibold text-inkDark hover:bg-white">Il risparmio</a>
+            <a href="#assistenza-domiciliare" class="mobile-link block px-4 py-3 rounded-xl text-base font-semibold text-inkDark hover:bg-white">Assistenza a domicilio</a>
+            <a href="#contatti" class="mobile-link block px-4 py-3 rounded-xl text-base font-semibold text-inkDark hover:bg-white">Contatti</a>
+            <div class="pt-3">
+                <a href="#contatti" class="mobile-link w-full py-3.5 px-5 rounded-xl bg-clinicalTeal text-white font-semibold text-center block">
+                    Richiedi una demo
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main id="main-content">
+
+        <!-- =========================================================
+             1 & 2. HERO SECTION & ARCHITECTURAL RADAR DIAGRAM
+        ========================================================== -->
+        <section class="pt-8 pb-16 lg:pt-14 lg:pb-24">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
+                    
+                    <!-- Left Copy -->
+                    <div class="lg:col-span-6 space-y-6">
+                        <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-clinicalTeal/10 border border-clinicalTeal/20 text-clinicalTeal font-mono text-xs sm:text-sm font-semibold">
+                            <span class="w-2 h-2 rounded-full bg-sageTeal animate-pulse"></span>
+                            <span>Medicleo · monitoraggio e allerta</span>
+                        </div>
+
+                        <h1 class="font-serif font-bold text-4xl sm:text-5xl lg:text-[3.35rem] text-inkDark leading-[1.12] tracking-tight">
+                            Restare a casa, in sicurezza. Anche quando si invecchia.
+                        </h1>
+
+                        <p class="text-base sm:text-lg text-inkSecondary leading-relaxed">
+                            Medicleo veglia giorno e notte su anziani e persone fragili con un sensore radar non invasivo: allerte immediate a familiari e operatori, senza telecamere e senza nulla da indossare. Un'alternativa concreta all'ingresso in struttura, quando non è necessario.
+                        </p>
+
+                        <div class="pt-2 flex flex-wrap items-center gap-4">
+                            <a href="#contatti" class="px-7 py-4 rounded-xl bg-clinicalTeal hover:bg-sageTeal text-white font-bold text-sm sm:text-base shadow-md transition-all inline-flex items-center gap-2">
+                                <span>Richiedi una demo</span>
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
+                                </svg>
+                            </a>
+                            <a href="#come-funziona" class="px-5 py-4 rounded-xl bg-white hover:bg-sandNote text-clinicalTeal border border-warmStone font-semibold text-sm sm:text-base transition-colors">
+                                Come funziona
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Right Architectural Non-Invasive Radar Sensing Diagram -->
+                    <div class="lg:col-span-6">
+                        <div class="rounded-3xl bg-white border border-warmStone p-6 sm:p-8 shadow-lg relative overflow-hidden">
+                            <div class="flex items-center justify-between pb-4 mb-5 border-b border-warmStone">
+                                <div>
+                                    <span class="font-mono text-[11px] uppercase tracking-wider text-sageTeal font-semibold">Architettura Radar Non Invasiva</span>
+                                    <h2 class="font-serif font-bold text-xl text-inkDark">Rilevazione ambientale a distanza</h2>
+                                </div>
+                                <span class="px-3 py-1 rounded-full bg-emerald-50 border border-emerald-200 text-emerald-800 font-mono text-xs font-semibold">
+                                    Senza contatto
+                                </span>
+                            </div>
+
+                            <!-- SVG Room & Radar Wave Schematic -->
+                            <div class="rounded-2xl bg-alabaster border border-warmStone p-4 sm:p-5">
+                                <svg class="w-full h-52 sm:h-60" viewBox="0 0 520 240" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Schema sensore radar non invasivo nella stanza senza telecamere né dispositivi indossabili">
+                                    <!-- Room Walls & Floor -->
+                                    <rect x="16" y="16" width="488" height="204" rx="14" fill="#FFFFFF" stroke="#E2E6E1" stroke-width="2"/>
+                                    <line x1="16" y1="186" x2="504" y2="186" stroke="#CBD5D2" stroke-width="2"/>
+
+                                    <!-- Radar Sensor Mounted on Wall -->
+                                    <rect x="44" y="54" width="22" height="54" rx="5" fill="#0F3D3E"/>
+                                    <circle cx="55" cy="81" r="4" fill="#5EEAD4"/>
+                                    <text x="44" y="42" fill="#0F3D3E" font-family="JetBrains Mono, monospace" font-size="11" font-weight="600">SENSORE RADAR</text>
+
+                                    <!-- Animated Radar Waves -->
+                                    <circle class="radar-wave" cx="66" cy="81" r="45" stroke="#1D6F6B" stroke-width="1.5" fill="none"/>
+                                    <circle class="radar-wave-delayed" cx="66" cy="81" r="45" stroke="#0F3D3E" stroke-width="1.2" fill="none"/>
+                                    <path d="M78 62 Q130 81 78 100" stroke="#1D6F6B" stroke-width="2" stroke-linecap="round"/>
+                                    <path d="M92 48 Q165 81 92 114" stroke="#1D6F6B" stroke-width="1.6" stroke-dasharray="4 4" stroke-linecap="round"/>
+                                    <path d="M108 34 Q202 81 108 128" stroke="#0F3D3E" stroke-width="1.2" stroke-dasharray="4 4" opacity="0.6" stroke-linecap="round"/>
+
+                                    <!-- Bed & Rested Person Representation -->
+                                    <rect x="235" y="148" width="145" height="38" rx="6" fill="#EBF1F0" stroke="#0F3D3E" stroke-width="1.8"/>
+                                    <rect x="242" y="138" width="34" height="12" rx="4" fill="#FFFFFF" stroke="#4A5754" stroke-width="1.5"/>
+                                    <path d="M282 146 Q330 132 374 146 L374 152 L282 152 Z" fill="#1D6F6B" opacity="0.22"/>
+                                    <circle cx="294" cy="128" r="10" fill="#0F3D3E"/>
+                                    <path d="M306 132 H368" stroke="#0F3D3E" stroke-width="7" stroke-linecap="round" opacity="0.85"/>
+
+                                    <!-- Alert & Data Node -->
+                                    <rect x="400" y="38" width="88" height="62" rx="10" fill="#FBF7EE" stroke="#EAD9B7" stroke-width="1.5"/>
+                                    <circle cx="416" cy="54" r="4" fill="#B45309"/>
+                                    <text x="425" y="58" fill="#B45309" font-family="JetBrains Mono, monospace" font-size="10" font-weight="700">ALLERTA</text>
+                                    <text x="410" y="76" fill="#121817" font-family="Plus Jakarta Sans, sans-serif" font-size="10" font-weight="600">Caduta / Letto</text>
+                                    <text x="410" y="90" fill="#4A5754" font-family="Plus Jakarta Sans, sans-serif" font-size="9.5">Familiari & Operatori</text>
+
+                                    <!-- Bottom Caption inside Diagram -->
+                                    <text x="34" y="206" fill="#4A5754" font-family="JetBrains Mono, monospace" font-size="10.5">
+                                        Nessuna telecamera · Nessun audio · Nessun dispositivo indossabile
+                                    </text>
+                                </svg>
+                            </div>
+
+                            <!-- 3 Key Guarantees Strip -->
+                            <div class="mt-4 grid grid-cols-3 gap-2.5 text-center">
+                                <div class="p-3 rounded-xl bg-alabaster border border-warmStone">
+                                    <div class="font-mono text-xs font-bold text-clinicalTeal">0 telecamere</div>
+                                    <div class="text-[11px] text-inkSecondary mt-0.5">Privacy tutelata</div>
+                                </div>
+                                <div class="p-3 rounded-xl bg-alabaster border border-warmStone">
+                                    <div class="font-mono text-xs font-bold text-clinicalTeal">0 indossabili</div>
+                                    <div class="text-[11px] text-inkSecondary mt-0.5">Nessun contatto</div>
+                                </div>
+                                <div class="p-3 rounded-xl bg-alabaster border border-warmStone">
+                                    <div class="font-mono text-xs font-bold text-sageTeal">24/7 attivo</div>
+                                    <div class="text-[11px] text-inkSecondary mt-0.5">Allerte immediate</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- =========================================================
+             3. "PERCHÉ RESTARE A CASA" & "IL CONTESTO — UN PAESE CHE INVECCHIA" (#problema)
+        ========================================================== -->
+        <section id="problema" class="py-16 lg:py-24 bg-white border-y border-warmStone reveal">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                
+                <!-- Section Intro + Framing Disclaimer -->
+                <div class="max-w-4xl space-y-4 mb-12">
+                    <h2 class="font-serif font-bold text-3xl sm:text-4xl lg:text-5xl text-clinicalTeal">
+                        Perché restare a casa
+                    </h2>
+                    <div class="rounded-2xl bg-sandNote border border-sandBorder p-4 sm:p-5 text-inkDark text-sm sm:text-base font-medium leading-relaxed">
+                        Un ausilio alla cura, non un sostituto dell'assistenza sanitaria continuativa. Restare a casa è una scelta da valutare con la famiglia e i medici.
+                    </div>
+                </div>
+
+                <!-- Context Subheading -->
+                <div class="mb-8 space-y-2">
+                    <span class="font-mono text-xs uppercase tracking-wider font-semibold text-sageTeal">Il contesto</span>
+                    <h3 class="font-serif font-bold text-2xl sm:text-3xl text-inkDark">
+                        Un Paese che invecchia
+                    </h3>
+                    <p class="text-base sm:text-lg text-inkSecondary max-w-3xl leading-relaxed">
+                        Sempre più persone anziane e famiglie più piccole: portare la vigilanza a domicilio significa rispondere a un bisogno concreto, senza rinunciare alla propria vita.
+                    </p>
+                </div>
+
+                <!-- 4 Exact ISTAT / Marche Statistics Cards -->
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-14">
+                    
+                    <!-- Stat 1: 34,5% -->
+                    <article class="care-card rounded-3xl bg-alabaster border border-warmStone p-6 flex flex-col justify-between">
+                        <div>
+                            <div class="font-mono font-bold text-3xl sm:text-4xl text-clinicalTeal">34,5%</div>
+                            <h4 class="font-serif font-bold text-lg text-inkDark mt-2">Avrà almeno 65 anni nel 2050</h4>
+                            <p class="text-sm text-inkSecondary mt-2 leading-relaxed">
+                                Dal 24,7% del 2025, nello scenario mediano delle previsioni Istat: una popolazione più anziana, con nuovi bisogni di assistenza.
+                            </p>
+                        </div>
+                        <p class="mt-5 pt-3 border-t border-warmStone font-mono text-[11px] text-inkSecondary">
+                            Fonte: Istat, previsioni base 1/1/2025 · 31 agosto 2026
+                        </p>
+                    </article>
+
+                    <!-- Stat 2: Oltre il 7% -->
+                    <article class="care-card rounded-3xl bg-alabaster border border-warmStone p-6 flex flex-col justify-between">
+                        <div>
+                            <div class="font-mono font-bold text-3xl sm:text-4xl text-clinicalTeal">Oltre il 7%</div>
+                            <h4 class="font-serif font-bold text-lg text-inkDark mt-2">Avrà almeno 85 anni nel 2050</h4>
+                            <p class="text-sm text-inkSecondary mt-2 leading-relaxed">
+                                Dal 4,1% del 2025. Cresce il bisogno di vicinanza e supporto, anche nelle ore in cui i familiari non possono esserci.
+                            </p>
+                        </div>
+                        <p class="mt-5 pt-3 border-t border-warmStone font-mono text-[11px] text-inkSecondary">
+                            Fonte: Istat, previsioni base 1/1/2025 · 31 agosto 2026
+                        </p>
+                    </article>
+
+                    <!-- Stat 3: 425.780 -->
+                    <article class="care-card rounded-3xl bg-alabaster border border-warmStone p-6 flex flex-col justify-between">
+                        <div>
+                            <div class="font-mono font-bold text-3xl sm:text-4xl text-clinicalTeal">425.780</div>
+                            <h4 class="font-serif font-bold text-lg text-inkDark mt-2">Posti letto residenziali complessivi</h4>
+                            <p class="text-sm text-inkSecondary mt-2 leading-relaxed">
+                                7,2 ogni 1.000 residenti, non tutti destinati agli anziani. Gli ospiti over 65 sono poco più di 291mila, quasi 239mila non autosufficienti.
+                            </p>
+                        </div>
+                        <p class="mt-5 pt-3 border-t border-warmStone font-mono text-[11px] text-inkSecondary">
+                            Fonte: Istat, strutture residenziali al 1° gennaio 2024 · report
+                        </p>
+                    </article>
+
+                    <!-- Stat 4: 1.015 -->
+                    <article class="care-card rounded-3xl bg-alabaster border border-warmStone p-6 flex flex-col justify-between">
+                        <div>
+                            <div class="font-mono font-bold text-3xl sm:text-4xl text-clinicalTeal">1.015</div>
+                            <h4 class="font-serif font-bold text-lg text-inkDark mt-2">Anziani in attesa di RSA nelle Marche</h4>
+                            <p class="text-sm text-inkSecondary mt-2 leading-relaxed">
+                                Altri 6.635 in attesa nelle Residenze Protette, compresi 1.668 con demenza. Dati riportati nell'interrogazione n. 84: un esempio regionale, non nazionale.
+                            </p>
+                        </div>
+                        <p class="mt-5 pt-3 border-t border-warmStone font-mono text-[11px] text-inkSecondary">
+                            Fonte: Consiglio regionale Marche, indice interrogazioni · n. 84, 15 gennaio 2026
+                        </p>
+                    </article>
+
+                </div>
+
+                <!-- "Le strutture non bastano, e non sempre servono" Analysis & Sources -->
+                <div class="rounded-3xl bg-alabaster border border-warmStone p-6 sm:p-8 lg:p-10 space-y-6">
+                    <h3 class="font-serif font-bold text-2xl sm:text-3xl text-clinicalTeal">
+                        Le strutture non bastano, e non sempre servono
+                    </h3>
+                    <p class="text-base text-inkDark/90 leading-relaxed">
+                        Le strutture sono indispensabili per chi ha bisogno di assistenza sanitaria continuativa. Ma i posti disponibili e l'accesso ai servizi non sono uniformi sul territorio; le attese e il costo delle rette pesano sulle famiglie. Per chi può vivere a domicilio, una vigilanza continua può affiancare l'assistenza e aiutare a restare nella propria casa più a lungo.
+                    </p>
+
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 pt-2">
+                        <div class="rounded-2xl bg-white border border-warmStone p-5 space-y-2.5">
+                            <p class="text-sm text-inkDark leading-relaxed">
+                                Con circa 14,8 milioni di over 65 e poco più di 291mila anziani ospiti delle strutture, il confronto indicativo restituisce meno di 2 anziani su 100 in una struttura residenziale. La grande maggioranza vive fuori dalle strutture: è anche a casa che va portata la sicurezza.
+                            </p>
+                            <p class="text-xs text-inkSecondary leading-relaxed">
+                                Elaborazione su dati Istat riferiti a date diverse (popolazione al 1° gennaio 2026, ospiti al 1° gennaio 2024): un confronto di ordine di grandezza, non una misura puntuale della copertura né del fabbisogno di posti.
+                            </p>
+                            <div class="pt-1 font-mono text-[11px] text-inkSecondary space-y-0.5">
+                                <div>Fonte: Istat, Indicatori demografici 2025</div>
+                                <div>Fonte: Istat, strutture residenziali al 1° gennaio 2024 · report</div>
+                            </div>
+                        </div>
+
+                        <div class="rounded-2xl bg-sandNote border border-sandBorder p-5 space-y-2.5 flex flex-col justify-between">
+                            <div class="space-y-2.5">
+                                <p class="text-sm text-inkDark leading-relaxed">
+                                    In Lombardia, la retta media RSA riportata per il 2025 è circa 2.312 € al mese, 76 € al giorno e 27.747 € all'anno. È un dato regionale, non una media nazionale; gli importi sono arrotondati nella fonte e i servizi inclusi possono variare.
+                                </p>
+                            </div>
+                            <div class="pt-2 font-mono text-[11px] text-amberAccent font-medium">
+                                Fonte: CISL Milano, rassegna Conquiste del Lavoro · dati Lombardia 2025
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- =========================================================
+             4. "LA SOLUZIONE: LA SICUREZZA ARRIVA A CASA" (#soluzione)
+        ========================================================== -->
+        <section id="soluzione" class="py-16 lg:py-24 reveal">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                
+                <div class="max-w-3xl mb-12 space-y-3">
+                    <span class="font-mono text-xs uppercase tracking-wider font-semibold text-clinicalTeal">Medicleo</span>
+                    <h2 class="font-serif font-bold text-3xl sm:text-4xl lg:text-5xl text-inkDark">
+                        La soluzione: la sicurezza arriva a casa
+                    </h2>
+                    <p class="text-base sm:text-lg text-inkSecondary leading-relaxed">
+                        Quando le condizioni permettono di restare a domicilio, Medicleo affianca familiari e operatori con monitoraggio continuo e allerte. La cura resta alle persone; il radar aiuta a sapere quando intervenire.
+                    </p>
+                </div>
+
+                <!-- 4 Key Capabilities -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                    
+                    <article class="care-card rounded-3xl bg-white border border-warmStone p-6 sm:p-7 shadow-sm">
+                        <div class="w-11 h-11 rounded-2xl bg-clinicalTeal/10 text-clinicalTeal flex items-center justify-center mb-4">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.9" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>
+                            </svg>
+                        </div>
+                        <h3 class="font-serif font-bold text-xl text-inkDark mb-2">Monitoraggio continuo</h3>
+                        <p class="text-sm text-inkSecondary leading-relaxed">
+                            Frequenza cardiaca e respiratoria, sonno e presenza a letto, senza contatto.
+                        </p>
+                    </article>
+
+                    <article class="care-card rounded-3xl bg-white border border-warmStone p-6 sm:p-7 shadow-sm">
+                        <div class="w-11 h-11 rounded-2xl bg-amber-500/15 text-amberAccent flex items-center justify-center mb-4">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.9" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"/>
+                            </svg>
+                        </div>
+                        <h3 class="font-serif font-bold text-xl text-inkDark mb-2">Allerte a chi può intervenire</h3>
+                        <p class="text-sm text-inkSecondary leading-relaxed">
+                            Notifiche in caso di caduta e abbandono del letto, giorno e notte.
+                        </p>
+                    </article>
+
+                    <article class="care-card rounded-3xl bg-white border border-warmStone p-6 sm:p-7 shadow-sm">
+                        <div class="w-11 h-11 rounded-2xl bg-sageTeal/15 text-sageTeal flex items-center justify-center mb-4">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.9" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/>
+                            </svg>
+                        </div>
+                        <h3 class="font-serif font-bold text-xl text-inkDark mb-2">Dati in tempo reale</h3>
+                        <p class="text-sm text-inkSecondary leading-relaxed">
+                            Informazioni consultabili dai familiari e dagli operatori autorizzati.
+                        </p>
+                    </article>
+
+                    <article class="care-card rounded-3xl bg-white border border-warmStone p-6 sm:p-7 shadow-sm">
+                        <div class="w-11 h-11 rounded-2xl bg-clinicalTeal/10 text-clinicalTeal flex items-center justify-center mb-4">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.9" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
+                            </svg>
+                        </div>
+                        <h3 class="font-serif font-bold text-xl text-inkDark mb-2">Nessuna telecamera</h3>
+                        <p class="text-sm text-inkSecondary leading-relaxed">
+                            Niente immagini o audio registrati e nulla da indossare.
+                        </p>
+                    </article>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- =========================================================
+             5. "ASSISTENZA DOMICILIARE: DATI E OPPORTUNITÀ" (#assistenza-domiciliare)
+        ========================================================== -->
+        <section id="assistenza-domiciliare" class="py-14 lg:py-20 bg-white border-y border-warmStone reveal">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="rounded-3xl bg-alabaster border border-warmStone p-6 sm:p-10">
+                    <span class="font-mono text-xs uppercase tracking-wider font-semibold text-sageTeal">Assistenza domiciliare: dati e opportunità</span>
+                    <h2 class="font-serif font-bold text-2xl sm:text-3xl lg:text-4xl text-clinicalTeal mt-2 mb-4">
+                        Una direzione sostenuta anche dalle politiche per gli anziani
+                    </h2>
+                    <p class="text-base sm:text-lg text-inkDark/90 leading-relaxed max-w-4xl">
+                        La Legge 33/2023 e il D.Lgs. 29/2024 promuovono il sostegno alla domiciliarità e alla qualità della vita delle persone anziane. È un quadro di indirizzo, non un riconoscimento specifico di Medicleo né una promessa di contributi.
+                    </p>
+                    <div class="mt-5 pt-4 border-t border-warmStone flex flex-wrap gap-x-8 gap-y-2 font-mono text-xs text-inkSecondary">
+                        <span>Fonte: Gazzetta Ufficiale, Legge 33/2023</span>
+                        <span>Fonte: Gazzetta Ufficiale, D.Lgs. 29/2024</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- =========================================================
+             6. "QUALITÀ DELLA VITA — LA CASA È PIÙ DI UN LUOGO"
+        ========================================================== -->
+        <section class="py-16 lg:py-24 reveal">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="max-w-3xl mb-12 space-y-2">
+                    <span class="font-mono text-xs uppercase tracking-wider font-semibold text-sageTeal">Qualità della vita</span>
+                    <h2 class="font-serif font-bold text-3xl sm:text-4xl lg:text-5xl text-inkDark">
+                        La casa è più di un luogo
+                    </h2>
+                    <p class="text-base sm:text-lg text-inkSecondary leading-relaxed">
+                        Dove possibile, restare nel proprio ambiente significa preservare ciò che rende ogni giornata familiare. La sicurezza sostiene l'autonomia, non la cancella.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <article class="care-card rounded-3xl bg-white border border-warmStone p-6 sm:p-7 shadow-sm">
+                        <h3 class="font-serif font-bold text-xl text-clinicalTeal mb-2.5">Autonomia e dignità</h3>
+                        <p class="text-sm text-inkSecondary leading-relaxed">
+                            Continuare a scegliere i propri ritmi, con un supporto discreto che non prende il posto della persona.
+                        </p>
+                    </article>
+
+                    <article class="care-card rounded-3xl bg-white border border-warmStone p-6 sm:p-7 shadow-sm">
+                        <h3 class="font-serif font-bold text-xl text-clinicalTeal mb-2.5">Abitudini e affetti</h3>
+                        <p class="text-sm text-inkSecondary leading-relaxed">
+                            Restare tra i propri ricordi, vicino ai familiari e alla comunità che si conosce.
+                        </p>
+                    </article>
+
+                    <article class="care-card rounded-3xl bg-white border border-warmStone p-6 sm:p-7 shadow-sm">
+                        <h3 class="font-serif font-bold text-xl text-clinicalTeal mb-2.5">Serenità per i familiari</h3>
+                        <p class="text-sm text-inkSecondary leading-relaxed">
+                            Ricevere allerte anche a distanza e organizzare una risposta con chi si prende cura della persona.
+                        </p>
+                    </article>
+
+                    <article class="care-card rounded-3xl bg-white border border-warmStone p-6 sm:p-7 shadow-sm">
+                        <h3 class="font-serif font-bold text-xl text-clinicalTeal mb-2.5">Privacy</h3>
+                        <p class="text-sm text-inkSecondary leading-relaxed">
+                            Nessuna telecamera, nessun audio registrato: la casa resta uno spazio privato.
+                        </p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- =========================================================
+             7. "IL RISPARMIO" & INTERACTIVE COST CALCULATOR (#risparmio)
+        ========================================================== -->
+        <section id="risparmio" class="py-16 lg:py-24 bg-white border-y border-warmStone reveal">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                
+                <div class="max-w-3xl mb-10 space-y-3">
+                    <span class="font-mono text-xs uppercase tracking-wider font-semibold text-sageTeal">Il risparmio</span>
+                    <h2 class="font-serif font-bold text-3xl sm:text-4xl lg:text-5xl text-clinicalTeal">
+                        Una scelta di vita. Anche una scelta economica.
+                    </h2>
+                    <p class="text-base sm:text-lg text-inkSecondary leading-relaxed">
+                        Quando la permanenza a casa è appropriata, il confronto dei costi può aiutare famiglie ed enti a valutare una soluzione sostenibile. Non tutte le situazioni producono un risparmio.
+                    </p>
+                </div>
+
+                <!-- Two Comparison Cards: In struttura vs A casa con Medicleo -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10">
+                    <div class="rounded-3xl bg-alabaster border border-warmStone p-6 sm:p-8">
+                        <span class="font-mono text-xs uppercase tracking-wider font-bold text-inkSecondary">Confronto</span>
+                        <h3 class="font-serif font-bold text-2xl text-inkDark mt-1 mb-3">In struttura</h3>
+                        <p class="text-sm sm:text-base text-inkSecondary leading-relaxed">
+                            Retta, servizi inclusi ed eventuali extra. Una risposta necessaria per chi ha bisogni non gestibili a domicilio.
+                        </p>
+                    </div>
+
+                    <div class="rounded-3xl bg-alabaster border border-clinicalTeal/25 p-6 sm:p-8">
+                        <span class="font-mono text-xs uppercase tracking-wider font-bold text-clinicalTeal">Domiciliarità</span>
+                        <h3 class="font-serif font-bold text-2xl text-clinicalTeal mt-1 mb-3">A casa con Medicleo</h3>
+                        <p class="text-sm sm:text-base text-inkSecondary leading-relaxed">
+                            Assistenza proporzionata ai bisogni, monitoraggio e allerta, abitazione e spese quotidiane. Serve sempre qualcuno in grado di rispondere alle allerte.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Interactive "Confronta i costi della tua situazione" Calculator -->
+                <div class="rounded-3xl bg-alabaster border border-warmStone p-6 sm:p-8 lg:p-10 shadow-sm">
+                    <h3 class="font-serif font-bold text-2xl sm:text-3xl text-clinicalTeal mb-6">
+                        Confronta i costi della tua situazione
+                    </h3>
+
+                    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+                        <!-- Inputs Column -->
+                        <div class="lg:col-span-6 space-y-5">
+                            <div>
+                                <label for="retta-struttura" class="block text-sm font-bold text-inkDark mb-1.5">
+                                    Retta mensile della struttura (€)
+                                </label>
+                                <input id="retta-struttura" type="number" min="0" step="1" value="2312" class="w-full px-4 py-3 rounded-xl bg-white border border-warmStone font-mono text-base text-inkDark focus:outline-none focus:border-clinicalTeal">
+                                <p class="mt-2 font-mono text-xs text-inkSecondary">
+                                    Fonte: CISL Milano, rassegna Conquiste del Lavoro · dati Lombardia 2025
+                                </p>
+                                <p class="mt-0.5 text-xs text-inkSecondary">
+                                    Valore iniziale: Lombardia 2025, modificabile.
+                                </p>
+                            </div>
+
+                            <div>
+                                <label for="costo-domicilio" class="block text-sm font-bold text-inkDark mb-1.5">
+                                    Costo mensile della soluzione a domicilio (€)
+                                </label>
+                                <input id="costo-domicilio" type="number" min="0" step="1" placeholder="Es. 1450" class="w-full px-4 py-3 rounded-xl bg-white border border-warmStone font-mono text-base text-inkDark focus:outline-none focus:border-clinicalTeal">
+                                <p class="mt-2 text-xs text-inkSecondary leading-relaxed">
+                                    Inserisci badante/assistenza, Medicleo e gli altri costi a domicilio. Il prezzo di Medicleo non è ancora disponibile: richiedi una proposta prima di includerlo nella stima.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Live Estimate Output Column -->
+                        <div class="lg:col-span-6 flex flex-col justify-between rounded-2xl bg-white border border-warmStone p-6">
+                            <div>
+                                <span class="font-mono text-xs uppercase tracking-wider font-semibold text-sageTeal">Simulazione indicativa</span>
+                                <div id="cost-comparison-result" class="mt-3 text-sm sm:text-base text-inkDark leading-relaxed">
+                                    La stima sarà disponibile dopo aver inserito entrambi i costi.
+                                </div>
+                            </div>
+
+                            <div class="mt-6 pt-4 border-t border-warmStone rounded-xl bg-sandNote/70 p-3.5 text-xs text-inkSecondary leading-relaxed">
+                                Stima indicativa, i costi reali dipendono dalla situazione e dalla regione. Il confronto assume costi mensili costanti, senza rivalutazioni, contributi o spese straordinarie. Considera tutti i servizi necessari: le due soluzioni non sono equivalenti per ogni bisogno assistenziale.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- =========================================================
+             8. "PER CHI — UNA RETE INTORNO ALLA PERSONA" (#per-chi)
+        ========================================================== -->
+        <section id="per-chi" class="py-16 lg:py-24 reveal">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="max-w-3xl mb-12 space-y-2">
+                    <span class="font-mono text-xs uppercase tracking-wider font-semibold text-sageTeal">Per chi</span>
+                    <h2 class="font-serif font-bold text-3xl sm:text-4xl lg:text-5xl text-inkDark">
+                        Una rete intorno alla persona
+                    </h2>
+                    <p class="text-base sm:text-lg text-inkSecondary leading-relaxed">
+                        Famiglie, enti e servizi possono collaborare per sostenere chi può restare a casa e affiancare chi opera nelle strutture.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 lg:gap-8">
+                    
+                    <!-- Audience 1: Famiglie -->
+                    <article class="care-card rounded-3xl bg-white border border-warmStone p-7 shadow-sm">
+                        <h3 class="font-serif font-bold text-2xl text-clinicalTeal mb-4">Famiglie</h3>
+                        <ul class="space-y-3 text-sm sm:text-base text-inkDark/90">
+                            <li class="flex items-start gap-2.5">
+                                <span class="w-2 h-2 rounded-full bg-sageTeal mt-2 shrink-0"></span>
+                                <span>Un supporto per chi può restare a casa propria</span>
+                            </li>
+                            <li class="flex items-start gap-2.5">
+                                <span class="w-2 h-2 rounded-full bg-sageTeal mt-2 shrink-0"></span>
+                                <span>Allerte ai familiari e dati consultabili a distanza</span>
+                            </li>
+                            <li class="flex items-start gap-2.5">
+                                <span class="w-2 h-2 rounded-full bg-sageTeal mt-2 shrink-0"></span>
+                                <span>Una scelta da valutare insieme al medico e a chi assiste</span>
+                            </li>
+                        </ul>
+                    </article>
+
+                    <!-- Audience 2: Enti pubblici, Comuni e ASL -->
+                    <article class="care-card rounded-3xl bg-white border border-warmStone p-7 shadow-sm">
+                        <h3 class="font-serif font-bold text-2xl text-clinicalTeal mb-4">Enti pubblici, Comuni e ASL</h3>
+                        <ul class="space-y-3 text-sm sm:text-base text-inkDark/90">
+                            <li class="flex items-start gap-2.5">
+                                <span class="w-2 h-2 rounded-full bg-sageTeal mt-2 shrink-0"></span>
+                                <span>Supporto ai progetti di assistenza domiciliare integrata</span>
+                            </li>
+                            <li class="flex items-start gap-2.5">
+                                <span class="w-2 h-2 rounded-full bg-sageTeal mt-2 shrink-0"></span>
+                                <span>Monitoraggio di anziani soli sul territorio</span>
+                            </li>
+                            <li class="flex items-start gap-2.5">
+                                <span class="w-2 h-2 rounded-full bg-sageTeal mt-2 shrink-0"></span>
+                                <span>Domiciliarità per chi ne ha le condizioni, per contribuire ad alleggerire la pressione sulle liste d'attesa</span>
+                            </li>
+                        </ul>
+                    </article>
+
+                    <!-- Audience 3: RSA, cooperative e servizi di assistenza -->
+                    <article class="care-card rounded-3xl bg-white border border-warmStone p-7 shadow-sm">
+                        <h3 class="font-serif font-bold text-2xl text-clinicalTeal mb-4">RSA, cooperative e servizi di assistenza</h3>
+                        <ul class="space-y-3 text-sm sm:text-base text-inkDark/90">
+                            <li class="flex items-start gap-2.5">
+                                <span class="w-2 h-2 rounded-full bg-sageTeal mt-2 shrink-0"></span>
+                                <span>Allerte che aiutano a indirizzare l'intervento notturno</span>
+                            </li>
+                            <li class="flex items-start gap-2.5">
+                                <span class="w-2 h-2 rounded-full bg-sageTeal mt-2 shrink-0"></span>
+                                <span>Dati in tempo reale a supporto degli operatori</span>
+                            </li>
+                            <li class="flex items-start gap-2.5">
+                                <span class="w-2 h-2 rounded-full bg-sageTeal mt-2 shrink-0"></span>
+                                <span>Servizi a domicilio anche per chi attende un posto, se compatibili con i bisogni assistenziali</span>
+                            </li>
+                        </ul>
+                    </article>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- =========================================================
+             9. "COME FUNZIONA — TRE PASSI, NESSUN CONTATTO"
+        ========================================================== -->
+        <section id="come-funziona" class="py-16 lg:py-24 bg-white border-y border-warmStone reveal">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="max-w-3xl mb-12 space-y-2">
+                    <span class="font-mono text-xs uppercase tracking-wider font-semibold text-sageTeal">Come funziona</span>
+                    <h2 class="font-serif font-bold text-3xl sm:text-4xl lg:text-5xl text-inkDark">
+                        Tre passi, nessun contatto
+                    </h2>
+                    <p class="text-base sm:text-lg text-inkSecondary leading-relaxed">
+                        Si definiscono l'ambiente, le persone autorizzate e chi risponde alle allerte. Poi il sensore affianca la vigilanza quotidiana.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
+                    
+                    <article class="care-card rounded-3xl bg-alabaster border border-warmStone p-7">
+                        <div class="font-mono text-xs font-bold uppercase tracking-wider text-clinicalTeal mb-2">Passo 1</div>
+                        <h3 class="font-serif font-bold text-xl text-inkDark mb-2.5">Installazione nella stanza</h3>
+                        <p class="text-sm text-inkSecondary leading-relaxed">
+                            Il sensore radar si installa nella stanza, senza alcun contatto con la persona e senza dispositivi sul letto.
+                        </p>
+                    </article>
+
+                    <article class="care-card rounded-3xl bg-alabaster border border-warmStone p-7">
+                        <div class="font-mono text-xs font-bold uppercase tracking-wider text-clinicalTeal mb-2">Passo 2</div>
+                        <h3 class="font-serif font-bold text-xl text-inkDark mb-2.5">Rilevazione continua</h3>
+                        <p class="text-sm text-inkSecondary leading-relaxed">
+                            Rileva in modo continuo frequenza cardiaca, frequenza respiratoria, qualità del sonno e movimenti.
+                        </p>
+                    </article>
+
+                    <article class="care-card rounded-3xl bg-alabaster border border-warmStone p-7">
+                        <div class="font-mono text-xs font-bold uppercase tracking-wider text-clinicalTeal mb-2">Passo 3</div>
+                        <h3 class="font-serif font-bold text-xl text-inkDark mb-2.5">Allerta e dati in tempo reale</h3>
+                        <p class="text-sm text-inkSecondary leading-relaxed">
+                            In caso di caduta o abbandono del letto invia un'allerta agli operatori incaricati o ai familiari, che possono consultare i dati in tempo reale.
+                        </p>
+                    </article>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- =========================================================
+             10. "VIDEO — GUARDA MEDICLEO IN AZIONE"
+        ========================================================== -->
+        <section class="py-16 lg:py-24 reveal">
+            <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-2xl mx-auto mb-10 space-y-2">
+                    <span class="font-mono text-xs uppercase tracking-wider font-semibold text-sageTeal">Video</span>
+                    <h2 class="font-serif font-bold text-3xl sm:text-4xl text-clinicalTeal">
+                        Guarda Medicleo in azione
+                    </h2>
+                    <p class="text-base text-inkSecondary">
+                        Il sensore, il monitoraggio e le allerte: una presenza discreta al fianco di chi si prende cura.
+                    </p>
+                </div>
+
+                <div class="rounded-3xl bg-clinicalTealDark text-white border border-warmStone overflow-hidden shadow-xl">
+                    <div id="video-stage" class="p-8 sm:p-14 flex flex-col items-center justify-center text-center min-h-[280px] sm:min-h-[340px] relative">
+                        <button onclick="toggleVideoPreview()" aria-label="Avvia anteprima video Medicleo" class="w-20 h-20 rounded-full bg-white/15 hover:bg-white/25 border border-white/30 flex items-center justify-center text-white transition-transform hover:scale-105 cursor-pointer mb-5">
+                            <svg class="w-9 h-9 ml-1" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M8 5v14l11-7z"/>
+                            </svg>
+                        </button>
+                        <div class="font-serif font-bold text-xl sm:text-2xl text-white">Anteprima presentazione Medicleo</div>
+                        <p class="text-sm text-slate-300 mt-2 max-w-md">
+                            Monitoraggio radar non invasivo dei parametri vitali, notifiche di caduta e abbandono del letto senza telecamere.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- =========================================================
+             11. "DOMANDE FREQUENTI — HAI QUALCHE DUBBIO?" (ALL 16 FAQS)
+        ========================================================== -->
+        <section id="faq" class="py-16 lg:py-24 bg-white border-y border-warmStone reveal">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                
+                <div class="mb-10 space-y-2">
+                    <span class="font-mono text-xs uppercase tracking-wider font-semibold text-sageTeal">Domande frequenti</span>
+                    <h2 class="font-serif font-bold text-3xl sm:text-4xl text-clinicalTeal">
+                        Hai qualche dubbio?
+                    </h2>
+                </div>
+
+                <!-- 16 Exact FAQ Items -->
+                <div class="space-y-3" id="faq-accordion">
+                    <!-- Populated & rendered cleanly with accessible buttons -->
+                    <div class="rounded-2xl bg-alabaster border border-warmStone overflow-hidden">
+                        <button type="button" class="faq-btn w-full px-5 py-4 text-left flex items-center justify-between gap-4 font-semibold text-sm sm:text-base text-inkDark hover:text-clinicalTeal cursor-pointer" aria-expanded="false">
+                            <span>Medicleo può evitare l’ingresso in RSA?</span>
+                            <span class="faq-icon font-mono text-lg text-clinicalTeal shrink-0">+</span>
+                        </button>
+                        <div class="faq-panel hidden px-5 pb-4 text-sm text-inkSecondary leading-relaxed border-t border-warmStone/70 pt-3">
+                            Quando le condizioni cliniche e assistenziali consentono di restare a domicilio, Medicleo affianca familiari e operatori con monitoraggio continuo e allerte, aiutando a prolungare la permanenza a casa. Non sostituisce però l’assistenza sanitaria continuativa o l’ingresso in struttura quando necessario.
+                        </div>
+                    </div>
+
+                    <div class="rounded-2xl bg-alabaster border border-warmStone overflow-hidden">
+                        <button type="button" class="faq-btn w-full px-5 py-4 text-left flex items-center justify-between gap-4 font-semibold text-sm sm:text-base text-inkDark hover:text-clinicalTeal cursor-pointer" aria-expanded="false">
+                            <span>Quanto si risparmia rispetto a una struttura?</span>
+                            <span class="faq-icon font-mono text-lg text-clinicalTeal shrink-0">+</span>
+                        </button>
+                        <div class="faq-panel hidden px-5 pb-4 text-sm text-inkSecondary leading-relaxed border-t border-warmStone/70 pt-3">
+                            Dipende dalla situazione personale, dalla regione, dal livello di assistenza domiciliare necessario e dalle tariffe delle strutture (ad esempio in Lombardia il dato riportato per il 2025 è circa 2.312 € al mese). Non tutte le situazioni producono un risparmio e va sempre considerata la copertura assistenziale complessiva.
+                        </div>
+                    </div>
+
+                    <div class="rounded-2xl bg-alabaster border border-warmStone overflow-hidden">
+                        <button type="button" class="faq-btn w-full px-5 py-4 text-left flex items-center justify-between gap-4 font-semibold text-sm sm:text-base text-inkDark hover:text-clinicalTeal cursor-pointer" aria-expanded="false">
+                            <span>È utile anche per enti pubblici e Comuni?</span>
+                            <span class="faq-icon font-mono text-lg text-clinicalTeal shrink-0">+</span>
+                        </button>
+                        <div class="faq-panel hidden px-5 pb-4 text-sm text-inkSecondary leading-relaxed border-t border-warmStone/70 pt-3">
+                            Sì, può supportare progetti di assistenza domiciliare integrata, il monitoraggio di persone anziane sole sul territorio e percorsi di domiciliarità compatibili con i bisogni assistenziali.
+                        </div>
+                    </div>
+
+                    <div class="rounded-2xl bg-alabaster border border-warmStone overflow-hidden">
+                        <button type="button" class="faq-btn w-full px-5 py-4 text-left flex items-center justify-between gap-4 font-semibold text-sm sm:text-base text-inkDark hover:text-clinicalTeal cursor-pointer" aria-expanded="false">
+                            <span>Serve un dispositivo indossabile?</span>
+                            <span class="faq-icon font-mono text-lg text-clinicalTeal shrink-0">+</span>
+                        </button>
+                        <div class="faq-panel hidden px-5 pb-4 text-sm text-inkSecondary leading-relaxed border-t border-warmStone/70 pt-3">
+                            No, non serve indossare alcun braccialetto, sensore o dispositivo e non ci sono sensori applicati al letto.
+                        </div>
+                    </div>
+
+                    <div class="rounded-2xl bg-alabaster border border-warmStone overflow-hidden">
+                        <button type="button" class="faq-btn w-full px-5 py-4 text-left flex items-center justify-between gap-4 font-semibold text-sm sm:text-base text-inkDark hover:text-clinicalTeal cursor-pointer" aria-expanded="false">
+                            <span>Come vengono protetti i dati?</span>
+                            <span class="faq-icon font-mono text-lg text-clinicalTeal shrink-0">+</span>
+                        </button>
+                        <div class="faq-panel hidden px-5 pb-4 text-sm text-inkSecondary leading-relaxed border-t border-warmStone/70 pt-3">
+                            Il sistema non acquisisce immagini video né registrazioni audio e rende le informazioni consultabili solo ai familiari e agli operatori autorizzati, nel rispetto della normativa privacy.
+                        </div>
+                    </div>
+
+                    <div class="rounded-2xl bg-alabaster border border-warmStone overflow-hidden">
+                        <button type="button" class="faq-btn w-full px-5 py-4 text-left flex items-center justify-between gap-4 font-semibold text-sm sm:text-base text-inkDark hover:text-clinicalTeal cursor-pointer" aria-expanded="false">
+                            <span>Funziona anche di notte o al buio?</span>
+                            <span class="faq-icon font-mono text-lg text-clinicalTeal shrink-0">+</span>
+                        </button>
+                        <div class="faq-panel hidden px-5 pb-4 text-sm text-inkSecondary leading-relaxed border-t border-warmStone/70 pt-3">
+                            Sì, il sensore radar opera giorno e notte anche al buio completo, senza dipendere dalla luce ambientale.
+                        </div>
+                    </div>
+
+                    <div class="rounded-2xl bg-alabaster border border-warmStone overflow-hidden">
+                        <button type="button" class="faq-btn w-full px-5 py-4 text-left flex items-center justify-between gap-4 font-semibold text-sm sm:text-base text-inkDark hover:text-clinicalTeal cursor-pointer" aria-expanded="false">
+                            <span>Cosa succede in caso di allerta?</span>
+                            <span class="faq-icon font-mono text-lg text-clinicalTeal shrink-0">+</span>
+                        </button>
+                        <div class="faq-panel hidden px-5 pb-4 text-sm text-inkSecondary leading-relaxed border-t border-warmStone/70 pt-3">
+                            In caso di caduta o abbandono del letto viene inviata un'allerta ai familiari o agli operatori incaricati, che possono verificare i dati in tempo reale e attivare l'intervento previsto.
+                        </div>
+                    </div>
+
+                    <div class="rounded-2xl bg-alabaster border border-warmStone overflow-hidden">
+                        <button type="button" class="faq-btn w-full px-5 py-4 text-left flex items-center justify-between gap-4 font-semibold text-sm sm:text-base text-inkDark hover:text-clinicalTeal cursor-pointer" aria-expanded="false">
+                            <span>Come si installa?</span>
+                            <span class="faq-icon font-mono text-lg text-clinicalTeal shrink-0">+</span>
+                        </button>
+                        <div class="faq-panel hidden px-5 pb-4 text-sm text-inkSecondary leading-relaxed border-t border-warmStone/70 pt-3">
+                            Il sensore radar si installa nella stanza definendo l'ambiente, le persone autorizzate e chi risponde alle allerte, senza contatto con la persona e senza dispositivi sul letto.
+                        </div>
+                    </div>
+
+                    <div class="rounded-2xl bg-alabaster border border-warmStone overflow-hidden">
+                        <button type="button" class="faq-btn w-full px-5 py-4 text-left flex items-center justify-between gap-4 font-semibold text-sm sm:text-base text-inkDark hover:text-clinicalTeal cursor-pointer" aria-expanded="false">
+                            <span>Per chi è adatto Medicleo?</span>
+                            <span class="faq-icon font-mono text-lg text-clinicalTeal shrink-0">+</span>
+                        </button>
+                        <div class="faq-panel hidden px-5 pb-4 text-sm text-inkSecondary leading-relaxed border-t border-warmStone/70 pt-3">
+                            È pensato per famiglie con anziani o persone fragili a domicilio, enti pubblici, Comuni e ASL, oltre che per RSA, cooperative e servizi di assistenza.
+                        </div>
+                    </div>
+
+                    <div class="rounded-2xl bg-alabaster border border-warmStone overflow-hidden">
+                        <button type="button" class="faq-btn w-full px-5 py-4 text-left flex items-center justify-between gap-4 font-semibold text-sm sm:text-base text-inkDark hover:text-clinicalTeal cursor-pointer" aria-expanded="false">
+                            <span>Serve una connessione internet?</span>
+                            <span class="faq-icon font-mono text-lg text-clinicalTeal shrink-0">+</span>
+                        </button>
+                        <div class="faq-panel hidden px-5 pb-4 text-sm text-inkSecondary leading-relaxed border-t border-warmStone/70 pt-3">
+                            La connettività consente l'invio delle allerte a distanza e la consultazione dei dati in tempo reale da parte dei familiari e degli operatori autorizzati; i requisiti dell'ambiente vengono valutati in fase di consulenza o demo.
+                        </div>
+                    </div>
+
+                    <div class="rounded-2xl bg-alabaster border border-warmStone overflow-hidden">
+                        <button type="button" class="faq-btn w-full px-5 py-4 text-left flex items-center justify-between gap-4 font-semibold text-sm sm:text-base text-inkDark hover:text-clinicalTeal cursor-pointer" aria-expanded="false">
+                            <span>Il sistema usa telecamere o microfoni?</span>
+                            <span class="faq-icon font-mono text-lg text-clinicalTeal shrink-0">+</span>
+                        </button>
+                        <div class="faq-panel hidden px-5 pb-4 text-sm text-inkSecondary leading-relaxed border-t border-warmStone/70 pt-3">
+                            No, Medicleo utilizza un sensore radar non invasivo: nessuna telecamera e nessun audio registrato.
+                        </div>
+                    </div>
+
+                    <div class="rounded-2xl bg-alabaster border border-warmStone overflow-hidden">
+                        <button type="button" class="faq-btn w-full px-5 py-4 text-left flex items-center justify-between gap-4 font-semibold text-sm sm:text-base text-inkDark hover:text-clinicalTeal cursor-pointer" aria-expanded="false">
+                            <span>Cosa vede il familiare o l'operatore?</span>
+                            <span class="faq-icon font-mono text-lg text-clinicalTeal shrink-0">+</span>
+                        </button>
+                        <div class="faq-panel hidden px-5 pb-4 text-sm text-inkSecondary leading-relaxed border-t border-warmStone/70 pt-3">
+                            I familiari e gli operatori autorizzati ricevono le notifiche di allerta e possono consultare in tempo reale i dati rilevati (come frequenza cardiaca e respiratoria, sonno, movimenti e presenza a letto), senza immagini video.
+                        </div>
+                    </div>
+
+                    <div class="rounded-2xl bg-alabaster border border-warmStone overflow-hidden">
+                        <button type="button" class="faq-btn w-full px-5 py-4 text-left flex items-center justify-between gap-4 font-semibold text-sm sm:text-base text-inkDark hover:text-clinicalTeal cursor-pointer" aria-expanded="false">
+                            <span>Funziona se nella stanza ci sono altre persone o animali?</span>
+                            <span class="faq-icon font-mono text-lg text-clinicalTeal shrink-0">+</span>
+                        </button>
+                        <div class="faq-panel hidden px-5 pb-4 text-sm text-inkSecondary leading-relaxed border-t border-warmStone/70 pt-3">
+                            Durante l'installazione e la configurazione si definiscono le caratteristiche dell'ambiente e le esigenze di monitoraggio insieme al team Medicleo per valutare il contesto della stanza.
+                        </div>
+                    </div>
+
+                    <div class="rounded-2xl bg-alabaster border border-warmStone overflow-hidden">
+                        <button type="button" class="faq-btn w-full px-5 py-4 text-left flex items-center justify-between gap-4 font-semibold text-sm sm:text-base text-inkDark hover:text-clinicalTeal cursor-pointer" aria-expanded="false">
+                            <span>Medicleo sostituisce il personale o la badante?</span>
+                            <span class="faq-icon font-mono text-lg text-clinicalTeal shrink-0">+</span>
+                        </button>
+                        <div class="faq-panel hidden px-5 pb-4 text-sm text-inkSecondary leading-relaxed border-t border-warmStone/70 pt-3">
+                            No: la cura resta alle persone. Medicleo è un ausilio alla vigilanza e all'allerta e serve sempre qualcuno in grado di rispondere alle allerte e prestare assistenza.
+                        </div>
+                    </div>
+
+                    <div class="rounded-2xl bg-alabaster border border-warmStone overflow-hidden">
+                        <button type="button" class="faq-btn w-full px-5 py-4 text-left flex items-center justify-between gap-4 font-semibold text-sm sm:text-base text-inkDark hover:text-clinicalTeal cursor-pointer" aria-expanded="false">
+                            <span>Medicleo fa diagnosi?</span>
+                            <span class="faq-icon font-mono text-lg text-clinicalTeal shrink-0">+</span>
+                        </button>
+                        <div class="faq-panel hidden px-5 pb-4 text-sm text-inkSecondary leading-relaxed border-t border-warmStone/70 pt-3">
+                            No, Medicleo non effettua diagnosi mediche né sostituisce la valutazione del medico o l'assistenza sanitaria continuativa.
+                        </div>
+                    </div>
+
+                    <div class="rounded-2xl bg-alabaster border border-warmStone overflow-hidden">
+                        <button type="button" class="faq-btn w-full px-5 py-4 text-left flex items-center justify-between gap-4 font-semibold text-sm sm:text-base text-inkDark hover:text-clinicalTeal cursor-pointer" aria-expanded="false">
+                            <span>Si può usare a casa di un anziano che vive da solo?</span>
+                            <span class="faq-icon font-mono text-lg text-clinicalTeal shrink-0">+</span>
+                        </button>
+                        <div class="faq-panel hidden px-5 pb-4 text-sm text-inkSecondary leading-relaxed border-t border-warmStone/70 pt-3">
+                            Sì, è particolarmente indicato per supportare la vigilanza anche quando la persona vive sola o non ci sono familiari presenti in casa, a condizione che sia definita una rete di familiari o operatori incaricati di rispondere alle allerte.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Closing Callout Box -->
+                <div class="mt-12 rounded-3xl bg-clinicalTeal text-white p-7 sm:p-10 flex flex-col md:flex-row md:items-center justify-between gap-6 shadow-lg">
+                    <div class="space-y-2 max-w-2xl">
+                        <h3 class="font-serif font-bold text-2xl sm:text-3xl text-white">
+                            Più anni a casa propria, più serenità per chi vi vuole bene.
+                        </h3>
+                        <p class="text-sm sm:text-base text-slate-200 leading-relaxed">
+                            Una scelta importante merita risposte concrete. Guarda come funziona Medicleo e confronta le tue esigenze con ciò che il monitoraggio può offrire, senza confonderlo con l’assistenza alla persona.
+                        </p>
+                    </div>
+                    <a href="#contatti" class="px-7 py-4 rounded-xl bg-white hover:bg-sandNote text-clinicalTeal font-bold text-sm sm:text-base shrink-0 text-center transition-colors">
+                        Richiedi una demo
+                    </a>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- =========================================================
+             12. "CONTATTI" & INTERACTIVE REQUEST FORM (#contatti)
+        ========================================================== -->
+        <section id="contatti" class="py-16 lg:py-24 reveal">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12">
+                    
+                    <!-- Left 6 Cols: Contact Details & 4 Bullets -->
+                    <div class="lg:col-span-6 space-y-6">
+                        <span class="font-mono text-xs uppercase tracking-wider font-semibold text-sageTeal">Contatti</span>
+                        <h2 class="font-serif font-bold text-3xl sm:text-4xl lg:text-5xl text-clinicalTeal leading-tight">
+                            Può essere la soluzione per la tua famiglia o il tuo servizio?
+                        </h2>
+                        <p class="text-base sm:text-lg text-inkSecondary leading-relaxed">
+                            Richiedi una demo per capire come funziona il sensore, quali dati sono consultabili e come arrivano le allerte. Partiamo dalla persona e dall’ambiente in cui vive, non da una soluzione uguale per tutti.
+                        </p>
+
+                        <!-- 4 Exact Bullets -->
+                        <ul class="space-y-3 pt-1 text-sm sm:text-base text-inkDark">
+                            <li class="flex items-start gap-3">
+                                <span class="w-2 h-2 rounded-full bg-clinicalTeal mt-2 shrink-0"></span>
+                                <span>Valutiamo l’ambiente e le esigenze di monitoraggio.</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <span class="w-2 h-2 rounded-full bg-clinicalTeal mt-2 shrink-0"></span>
+                                <span>Chiariamo chi riceve le allerte e chi può intervenire.</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <span class="w-2 h-2 rounded-full bg-clinicalTeal mt-2 shrink-0"></span>
+                                <span>Confrontiamo installazione e costi per il tuo caso.</span>
+                            </li>
+                        </ul>
+
+                        <!-- Sede / Email / Telefono / Azienda -->
+                        <div class="rounded-3xl bg-white border border-warmStone p-6 grid grid-cols-1 sm:grid-cols-2 gap-5 shadow-sm">
+                            <div>
+                                <div class="font-mono text-xs uppercase tracking-wider text-inkSecondary font-semibold">Sede</div>
+                                <div class="text-sm font-semibold text-inkDark mt-1">Via L. Einaudi 54 – 45100 Rovigo (RO)</div>
+                            </div>
+                            <div>
+                                <div class="font-mono text-xs uppercase tracking-wider text-inkSecondary font-semibold">Email</div>
+                                <a href="mailto:info@medicleo.com" class="text-sm font-semibold text-clinicalTeal hover:underline mt-1 block">info@medicleo.com</a>
+                            </div>
+                            <div>
+                                <div class="font-mono text-xs uppercase tracking-wider text-inkSecondary font-semibold">Telefono</div>
+                                <a href="tel:0425090621" class="font-mono text-sm font-semibold text-inkDark hover:text-clinicalTeal mt-1 block">0425 090621</a>
+                            </div>
+                            <div>
+                                <div class="font-mono text-xs uppercase tracking-wider text-inkSecondary font-semibold">Azienda</div>
+                                <div class="font-mono text-xs font-semibold text-inkDark mt-1">Evolve S.r.l. – P.IVA 04597090234</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right 6 Cols: Interactive Contact Form -->
+                    <div class="lg:col-span-6">
+                        <form id="medicleo-contact-form" class="rounded-3xl bg-white border border-warmStone p-6 sm:p-8 lg:p-10 shadow-lg space-y-5">
+                            
+                            <div>
+                                <label for="nome-completo" class="block text-sm font-bold text-inkDark mb-1.5">Nome completo *</label>
+                                <input id="nome-completo" name="nome_completo" type="text" required class="w-full px-4 py-3 rounded-xl bg-alabaster border border-warmStone text-sm text-inkDark focus:outline-none focus:border-clinicalTeal">
+                            </div>
+
+                            <div>
+                                <label for="email-contatto" class="block text-sm font-bold text-inkDark mb-1.5">Email *</label>
+                                <input id="email-contatto" name="email" type="email" required class="w-full px-4 py-3 rounded-xl bg-alabaster border border-warmStone text-sm text-inkDark focus:outline-none focus:border-clinicalTeal">
+                            </div>
+
+                            <div>
+                                <label for="telefono-contatto" class="block text-sm font-bold text-inkDark mb-1.5">Telefono (facoltativo)</label>
+                                <input id="telefono-contatto" name="telefono" type="tel" class="w-full px-4 py-3 rounded-xl bg-alabaster border border-warmStone text-sm text-inkDark focus:outline-none focus:border-clinicalTeal">
+                            </div>
+
+                            <div>
+                                <label for="argomento-contatto" class="block text-sm font-bold text-inkDark mb-1.5">Argomento *</label>
+                                <select id="argomento-contatto" name="argomento" required class="w-full px-4 py-3 rounded-xl bg-alabaster border border-warmStone text-sm text-inkDark focus:outline-none focus:border-clinicalTeal">
+                                    <option value="Richiesta demo">Richiesta demo</option>
+                                    <option value="Richiesta informazioni">Richiesta informazioni</option>
+                                    <option value="Sono un familiare">Sono un familiare</option>
+                                    <option value="Sono un ente pubblico / ASL">Sono un ente pubblico / ASL</option>
+                                    <option value="Sono una RSA o una cooperativa">Sono una RSA o una cooperativa</option>
+                                    <option value="Assistenza tecnica">Assistenza tecnica</option>
+                                    <option value="Altro">Altro</option>
+                                </select>
+                            </div>
+
+                            <div>
+                                <label for="messaggio-contatto" class="block text-sm font-bold text-inkDark mb-1.5">Messaggio *</label>
+                                <textarea id="messaggio-contatto" name="messaggio" rows="4" required class="w-full px-4 py-3 rounded-xl bg-alabaster border border-warmStone text-sm text-inkDark focus:outline-none focus:border-clinicalTeal"></textarea>
+                            </div>
+
+                            <div class="flex items-start gap-3 pt-1">
+                                <input id="privacy-consent" name="privacy" type="checkbox" required class="mt-1 w-4 h-4 rounded border-warmStone text-clinicalTeal focus:ring-clinicalTeal">
+                                <label for="privacy-consent" class="text-xs sm:text-sm text-inkSecondary leading-relaxed">
+                                    Acconsento al trattamento dei miei dati secondo la Privacy Policy *
+                                </label>
+                            </div>
+
+                            <div id="form-feedback" class="hidden rounded-2xl bg-emerald-50 border border-emerald-200 p-4 text-sm text-emerald-900 font-medium"></div>
+
+                            <button type="submit" class="w-full py-4 px-6 rounded-xl bg-clinicalTeal hover:bg-sageTeal text-white font-bold text-base shadow-md transition-colors cursor-pointer">
+                                Invia richiesta
+                            </button>
+
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- =========================================================
+         13. FOOTER
+    ========================================================== -->
+    <footer class="bg-clinicalTealDark text-slate-200 pt-16 pb-12 border-t border-white/10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 pb-12 border-b border-white/10">
+                
+                <!-- Brand Summary & YouTube Link -->
+                <div class="lg:col-span-5 space-y-4">
+                    <a href="#" class="inline-flex items-center gap-2.5">
+                        <span class="font-sans font-extrabold text-xl text-white">Medicleo</span>
+                    </a>
+                    <p class="text-sm text-slate-300 leading-relaxed max-w-md">
+                        Monitoraggio radar non invasivo dei parametri vitali per RSA, strutture sanitarie e famiglie.
+                    </p>
+                    <div>
+                        <a href="https://www.youtube.com" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-sm font-semibold text-teal-200 hover:text-white transition-colors">
+                            <span>Medicleo su YouTube</span>
+                            <span>→</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Sezioni -->
+                <div class="lg:col-span-4 space-y-3">
+                    <h3 class="font-mono text-xs font-bold uppercase tracking-wider text-teal-300">Sezioni</h3>
+                    <ul class="grid grid-cols-2 gap-x-4 gap-y-2 text-sm text-slate-300">
+                        <li><a href="#problema" class="hover:text-white transition-colors">Perché a casa</a></li>
+                        <li><a href="#soluzione" class="hover:text-white transition-colors">La soluzione</a></li>
+                        <li><a href="#per-chi" class="hover:text-white transition-colors">Per chi</a></li>
+                        <li><a href="#risparmio" class="hover:text-white transition-colors">Il risparmio</a></li>
+                        <li><a href="#assistenza-domiciliare" class="hover:text-white transition-colors">Assistenza a domicilio</a></li>
+                        <li><a href="#contatti" class="hover:text-white transition-colors">Contatti</a></li>
+                        <li class="col-span-2">
+                            <button type="button" onclick="openPrivacyCookieModal()" class="hover:text-white transition-colors cursor-pointer">
+                                Privacy e cookie policy
+                            </button>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Contatti -->
+                <div class="lg:col-span-3 space-y-3">
+                    <h3 class="font-mono text-xs font-bold uppercase tracking-wider text-teal-300">Contatti</h3>
+                    <ul class="space-y-2 text-sm text-slate-300">
+                        <li>Via L. Einaudi 54 – 45100 Rovigo (RO)</li>
+                        <li><a href="mailto:info@medicleo.com" class="hover:text-white transition-colors">info@medicleo.com</a></li>
+                        <li class="font-mono text-xs">Tel. 0425 090621</li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <!-- Bottom Row -->
+            <div class="pt-8 flex flex-col sm:flex-row sm:items-center justify-between gap-4 text-xs text-slate-400">
+                <p>© 2026 Evolve S.r.l. – P.IVA 04597090234</p>
+                <div class="flex items-center gap-5">
+                    <button type="button" onclick="openPrivacyCookieModal()" class="hover:text-white transition-colors cursor-pointer">
+                        Privacy e cookie policy
+                    </button>
+                    <button type="button" onclick="openPrivacyCookieModal()" class="text-teal-200 hover:text-white underline underline-offset-4 cursor-pointer">
+                        Cookie
+                    </button>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- =========================================================
+         PRIVACY & COOKIE PREFERENCES MODAL
+    ========================================================== -->
+    <div id="cookie-policy-modal" class="fixed inset-0 z-50 hidden items-center justify-center p-4 bg-black/60 backdrop-blur-sm">
+        <div class="w-full max-w-md rounded-3xl bg-white border border-warmStone p-6 sm:p-8 shadow-2xl space-y-4">
+            <h3 class="font-serif font-bold text-2xl text-clinicalTeal">Privacy e cookie policy</h3>
+            <p class="text-sm text-inkSecondary leading-relaxed">
+                <strong>Evolve S.r.l.</strong> (Via L. Einaudi 54 – 45100 Rovigo, P.IVA 04597090234) gestisce questo sito nel rispetto della privacy. I cookie tecnici garantiscono il funzionamento della pagina e le preferenze selezionate.
+            </p>
+            <div class="flex gap-3 pt-2">
+                <button type="button" onclick="closePrivacyCookieModal()" class="flex-1 py-3 rounded-xl bg-clinicalTeal text-white font-semibold text-sm hover:bg-sageTeal transition-colors cursor-pointer">
+                    Salva preferenze
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- =========================================================
+         INTERACTIVE JAVASCRIPT
+    ========================================================== -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // 1. Mobile Navigation Drawer
+            const mobileBtn = document.getElementById('mobile-menu-btn');
+            const mobileDrawer = document.getElementById('mobile-drawer');
+            const iconOpen = document.getElementById('mobile-icon-open');
+            const iconClose = document.getElementById('mobile-icon-close');
+
+            mobileBtn.addEventListener('click', () => {
+                const isOpen = !mobileDrawer.classList.contains('hidden');
+                mobileDrawer.classList.toggle('hidden', isOpen);
+                iconOpen.classList.toggle('hidden', !isOpen);
+                iconClose.classList.toggle('hidden', isOpen);
+            });
+
+            document.querySelectorAll('.mobile-link').forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileDrawer.classList.add('hidden');
+                    iconOpen.classList.remove('hidden');
+                    iconClose.classList.add('hidden');
+                });
+            });
+
+            // 2. Cost Comparison Calculator ("Confronta i costi della tua situazione")
+            const rettaInput = document.getElementById('retta-struttura');
+            const domicilioInput = document.getElementById('costo-domicilio');
+            const resultBox = document.getElementById('cost-comparison-result');
+
+            function updateCostComparison() {
+                const rettaRaw = rettaInput.value.trim();
+                const domicilioRaw = domicilioInput.value.trim();
+
+                if (rettaRaw === '' || domicilioRaw === '') {
+                    resultBox.innerHTML = 'La stima sarà disponibile dopo aver inserito entrambi i costi.';
+                    return;
+                }
+
+                const retta = parseFloat(rettaRaw);
+                const domicilio = parseFloat(domicilioRaw);
+
+                if (Number.isNaN(retta) || Number.isNaN(domicilio) || retta < 0 || domicilio < 0) {
+                    resultBox.innerHTML = 'La stima sarà disponibile dopo aver inserito entrambi i costi.';
+                    return;
+                }
+
+                const diff = retta - domicilio;
+                const formattedDiff = Math.abs(diff).toLocaleString('it-IT', { maximumFractionDigits: 0 });
+                const formattedAnnual = Math.abs(diff * 12).toLocaleString('it-IT', { maximumFractionDigits: 0 });
+
+                if (diff > 0) {
+                    resultBox.innerHTML = `
+                        <div class="font-mono font-bold text-2xl text-clinicalTeal">Differenza mensile: ${formattedDiff} €</div>
+                        <p class="mt-1.5 text-sm text-inkSecondary">
+                            Con i valori inseriti, la retta mensile della struttura (${retta.toLocaleString('it-IT')} €) supera il costo mensile stimato a domicilio (${domicilio.toLocaleString('it-IT')} €) di <strong>${formattedDiff} € al mese</strong> (${formattedAnnual} € su 12 mesi costanti).
+                        </p>
+                    `;
+                } else if (diff < 0) {
+                    resultBox.innerHTML = `
+                        <div class="font-mono font-bold text-2xl text-amberAccent">Differenza mensile: +${formattedDiff} € a domicilio</div>
+                        <p class="mt-1.5 text-sm text-inkSecondary">
+                            Con i valori inseriti, il costo mensile a domicilio (${domicilio.toLocaleString('it-IT')} €) è superiore alla retta mensile indicata (${retta.toLocaleString('it-IT')} €) di <strong>${formattedDiff} € al mese</strong>.
+                        </p>
+                    `;
+                } else {
+                    resultBox.innerHTML = `
+                        <div class="font-mono font-bold text-2xl text-inkDark">Costi mensili equivalenti (0 €)</div>
+                        <p class="mt-1.5 text-sm text-inkSecondary">
+                            I due importi mensili inseriti coincidono (${retta.toLocaleString('it-IT')} €).
+                        </p>
+                    `;
+                }
+            }
+
+            rettaInput.addEventListener('input', updateCostComparison);
+            domicilioInput.addEventListener('input', updateCostComparison);
+
+            // 3. FAQ Accordion
+            document.querySelectorAll('.faq-btn').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const panel = btn.nextElementSibling;
+                    const icon = btn.querySelector('.faq-icon');
+                    const expanded = btn.getAttribute('aria-expanded') === 'true';
+
+                    btn.setAttribute('aria-expanded', String(!expanded));
+                    panel.classList.toggle('hidden', expanded);
+                    icon.textContent = expanded ? '+' : '−';
+                });
+            });
+
+            // 4. Contact Form Feedback
+            const contactForm = document.getElementById('medicleo-contact-form');
+            const formFeedback = document.getElementById('form-feedback');
+
+            contactForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                const nome = document.getElementById('nome-completo').value.trim();
+                const argomento = document.getElementById('argomento-contatto').value;
+                formFeedback.classList.remove('hidden');
+                formFeedback.innerHTML = `Grazie <strong>${nome}</strong>: la tua richiesta (<em>${argomento}</em>) è stata preparata per Evolve S.r.l. (info@medicleo.com).`;
+                contactForm.reset();
+            });
+
+            // 5. Scroll Reveal
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('active');
+                    }
+                });
+            }, { threshold: 0.08 });
+
+            document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+        });
+
+        function toggleVideoPreview() {
+            const stage = document.getElementById('video-stage');
+            stage.innerHTML = `
+                <div class="max-w-xl mx-auto space-y-4">
+                    <div class="inline-block px-3 py-1 rounded-full bg-teal-400/20 text-teal-200 font-mono text-xs">Modalità anteprima · Medicleo</div>
+                    <h3 class="font-serif font-bold text-2xl text-white">Sensore radar senza contatto in ambiente domestico</h3>
+                    <p class="text-sm text-slate-200 leading-relaxed">
+                        Il radar rileva frequenza cardiaca, frequenza respiratoria, qualità del sonno, movimenti e presenza a letto senza telecamere né dispositivi indossabili, inviando allerte tempestive in caso di caduta o abbandono del letto.
+                    </p>
+                    <a href="#contatti" class="inline-block px-6 py-3 rounded-xl bg-white text-clinicalTeal font-bold text-sm hover:bg-sandNote transition-colors">
+                        Richiedi una demo completa
+                    </a>
+                </div>
+            `;
+        }
+
+        function openPrivacyCookieModal() {
+            const modal = document.getElementById('cookie-policy-modal');
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+        }
+
+        function closePrivacyCookieModal() {
+            const modal = document.getElementById('cookie-policy-modal');
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+        }
+    </script>
+</body>
+</html>
