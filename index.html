@@ -1,373 +1,443 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="preload" as="image" href="https://medicleo.com/assets/medicleo-logo-DnmoDSbt.webp">
-  <link rel="preload" as="image" href="https://medicleo.com/assets/medicleo-radar-hero-6io_rX3r.webp" fetchpriority="high">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap">
-  <link rel="stylesheet" href="https://medicleo.com/assets/styles-Cs_ChAg0.css">
-  <link rel="stylesheet" href="./custom.css">
-  <title>Medicleo – Anziani al sicuro a casa con il monitoraggio radar non invasivo</title>
-  <meta name="author" content="Evolve S.r.l.">
-  <meta name="theme-color" content="#1f5f9e">
-  <meta name="description" content="Sempre più anziani, pochi posti in struttura. Medicleo permette di restare a casa in sicurezza: monitoraggio continuo, allerte immediate, nessuna telecamera.">
-  <meta property="og:title" content="Medicleo – Anziani al sicuro a casa con il monitoraggio radar non invasivo">
-  <meta property="og:description" content="Sempre più anziani, pochi posti in struttura. Medicleo permette di restare a casa in sicurezza: monitoraggio continuo, allerte immediate, nessuna telecamera.">
-  <meta property="og:url" content="https://otanieljulio.github.io/medicleo-website/">
-  <meta property="og:type" content="website">
-  <meta property="og:locale" content="it_IT">
-  <meta property="og:site_name" content="Medicleo">
-  <meta property="og:image" content="https://medicleo.com/images/og-medicleo.jpg">
-  <meta property="og:image:width" content="1200">
-  <meta property="og:image:height" content="630">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Medicleo – Anziani al sicuro a casa con il monitoraggio radar non invasivo">
-  <meta name="twitter:description" content="Sempre più anziani, pochi posti in struttura. Medicleo permette di restare a casa in sicurezza: monitoraggio continuo, allerte immediate, nessuna telecamera.">
-  <meta name="twitter:image" content="https://medicleo.com/images/og-medicleo.jpg">
-  <link rel="icon" href="https://medicleo.com/favicon.ico" sizes="16x16 32x32 48x48">
-  <link rel="icon" type="image/png" sizes="32x32" href="https://medicleo.com/favicon-32x32.png">
-  <link rel="apple-touch-icon" sizes="180x180" href="https://medicleo.com/apple-touch-icon.png">
-  <link rel="canonical" href="https://otanieljulio.github.io/medicleo-website/">
-  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://medicleo.com/#organization","name":"Medicleo","legalName":"Evolve S.r.l.","url":"https://medicleo.com/","logo":"https://medicleo.com/images/medicleo-logo.png","email":"info@medicleo.com","telephone":"+39 0425 090621","vatID":"IT04597090234","address":{"@type":"PostalAddress","streetAddress":"Via Luigi Einaudi 54","postalCode":"45100","addressLocality":"Rovigo","addressRegion":"RO","addressCountry":"IT"},"sameAs":["https://www.youtube.com/@Medi-Cleo"]},{"@type":"WebSite","@id":"https://medicleo.com/#website","url":"https://medicleo.com/","name":"Medicleo","inLanguage":"it-IT","publisher":{"@id":"https://medicleo.com/#organization"}},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Medicleo può evitare l’ingresso in RSA?","acceptedAnswer":{"@type":"Answer","text":"Può aiutare a restare a casa più a lungo quando le condizioni lo consentono, rimandando o evitando un ingresso non necessario. Non sostituisce una RSA per chi ha bisogno di assistenza sanitaria continuativa e non garantisce di evitare ricoveri: la decisione spetta alla famiglia insieme ai medici, valutando i bisogni e le risorse disponibili."}},{"@type":"Question","name":"Quanto si risparmia rispetto a una struttura?","acceptedAnswer":{"@type":"Answer","text":"Dipende dalla retta, dall’assistenza necessaria a domicilio e dagli altri costi. Il calcolatore nella sezione Il risparmio confronta gli importi della tua situazione su base mensile, annua e su tre anni. Non è un risparmio garantito: includi anche Medicleo dopo aver richiesto una proposta."}},{"@type":"Question","name":"È utile anche per enti pubblici e Comuni?","acceptedAnswer":{"@type":"Answer","text":"Può affiancare progetti di assistenza domiciliare integrata e monitoraggio di anziani soli sul territorio, mettendo le allerte a disposizione degli operatori incaricati. Ogni progetto richiede una valutazione dei bisogni, del consenso della persona, delle responsabilità di intervento e dell’organizzazione del servizio."}},{"@type":"Question","name":"Serve un dispositivo indossabile?","acceptedAnswer":{"@type":"Answer","text":"No. Medicleo utilizza un sensore radar installato nella stanza: la persona monitorata non deve indossare braccialetti, cerotti o altri dispositivi, e nulla viene posizionato sul letto."}},{"@type":"Question","name":"Come vengono protetti i dati?","acceptedAnswer":{"@type":"Answer","text":"Il sistema non utilizza telecamere né registra immagini. I dati rilevati sono accessibili solo alle persone autorizzate, come il personale della struttura o i familiari indicati, e sono trattati nel rispetto della normativa sulla protezione dei dati personali."}},{"@type":"Question","name":"Funziona anche di notte o al buio?","acceptedAnswer":{"@type":"Answer","text":"Sì. Il radar non ha bisogno di luce per funzionare, quindi il monitoraggio prosegue anche di notte, quando la persona riposa, senza disturbarne il sonno."}},{"@type":"Question","name":"Cosa succede in caso di allerta?","acceptedAnswer":{"@type":"Answer","text":"Quando il sistema rileva un evento critico, come una caduta o l'abbandono del letto, invia una notifica alle persone incaricate, che possono intervenire tempestivamente e consultare i dati in tempo reale."}},{"@type":"Question","name":"Come si installa?","acceptedAnswer":{"@type":"Answer","text":"Il sensore viene installato nella stanza, senza alcun contatto con la persona e senza modificare l'arredamento. Durante la demo ti illustriamo le modalità di installazione più adatte al tuo caso."}},{"@type":"Question","name":"Per chi è adatto Medicleo?","acceptedAnswer":{"@type":"Answer","text":"È pensato per RSA e strutture sanitarie che vogliono un supporto al lavoro del personale, e per le famiglie che assistono un anziano a domicilio e desiderano maggiore serenità. Medicleo è un sistema di monitoraggio e allerta, non uno strumento di diagnosi."}},{"@type":"Question","name":"Serve una connessione internet?","acceptedAnswer":{"@type":"Answer","text":"Sì. Per inviare le allerte e rendere consultabili i dati a distanza il sensore ha bisogno di una connessione alla rete. Durante la demo verifichiamo insieme la soluzione più adatta all'ambiente in cui verrà installato."}},{"@type":"Question","name":"Il sistema usa telecamere o microfoni?","acceptedAnswer":{"@type":"Answer","text":"No. Medicleo si basa su un sensore radar: non riprende immagini e non registra audio. Per questo può essere usato anche in camera da letto e in bagno senza ledere la riservatezza della persona."}},{"@type":"Question","name":"Cosa vede il familiare o l'operatore?","acceptedAnswer":{"@type":"Answer","text":"Chi è autorizzato può consultare l'andamento dei parametri monitorati, come frequenza cardiaca, frequenza respiratoria, qualità del sonno e presenza a letto, e riceve le notifiche in caso di evento critico."}},{"@type":"Question","name":"Funziona se nella stanza ci sono altre persone o animali?","acceptedAnswer":{"@type":"Answer","text":"Il sensore è pensato per monitorare una persona nella sua stanza. Se l'ambiente è condiviso, durante il sopralluogo valutiamo posizionamento e configurazione più adatti."}},{"@type":"Question","name":"Medicleo sostituisce il personale o la badante?","acceptedAnswer":{"@type":"Answer","text":"No. È un supporto a chi assiste: aiuta a sapere quando serve intervenire, ma non sostituisce la presenza e il lavoro delle persone che si prendono cura dell'anziano."}},{"@type":"Question","name":"Medicleo fa diagnosi?","acceptedAnswer":{"@type":"Answer","text":"No. Medicleo è un sistema di monitoraggio e allerta: segnala variazioni ed eventi a chi assiste. Le valutazioni sulla salute restano sempre al medico curante o al personale sanitario."}},{"@type":"Question","name":"Si può usare a casa di un anziano che vive da solo?","acceptedAnswer":{"@type":"Answer","text":"Sì, è uno dei casi per cui Medicleo è pensato: la persona continua a vivere a casa propria e i familiari ricevono una notifica se qualcosa non va, anche quando sono lontani."}}]}]}</script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preload" as="image" href="https://medicleo.com/assets/medicleo-logo-DnmoDSbt.webp">
+<link rel="preload" as="image" href="https://medicleo.com/assets/medicleo-radar-hero-6io_rX3r.webp" fetchpriority="high">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap">
+<link rel="stylesheet" href="https://medicleo.com/assets/styles-Cs_ChAg0.css">
+<link rel="stylesheet" href="./custom.css">
+<title>Medicleo – Anziani al sicuro a casa con il monitoraggio radar non invasivo</title>
+<meta name="author" content="Evolve S.r.l.">
+<meta name="theme-color" content="#1f5f9e">
+<meta name="description" content="Sempre più anziani, pochi posti in struttura. Medicleo permette di restare a casa in sicurezza: monitoraggio continuo, allerte immediate, nessuna telecamera.">
+<meta property="og:title" content="Medicleo – Anziani al sicuro a casa con il monitoraggio radar non invasivo">
+<meta property="og:description" content="Sempre più anziani, pochi posti in struttura. Medicleo permette di restare a casa in sicurezza: monitoraggio continuo, allerte immediate, nessuna telecamera.">
+<meta property="og:url" content="https://otanieljulio.github.io/medicleo-website/">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="it_IT">
+<meta property="og:site_name" content="Medicleo">
+<meta property="og:image" content="https://medicleo.com/images/og-medicleo.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="https://medicleo.com/favicon.ico" sizes="16x16 32x32 48x48">
+<link rel="icon" type="image/png" sizes="32x32" href="https://medicleo.com/favicon-32x32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="https://medicleo.com/apple-touch-icon.png">
+<link rel="canonical" href="https://otanieljulio.github.io/medicleo-website/">
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://medicleo.com/#organization","name":"Medicleo","legalName":"Evolve S.r.l.","url":"https://medicleo.com/","logo":"https://medicleo.com/images/medicleo-logo.png","email":"info@medicleo.com","telephone":"+39 0425 090621","vatID":"IT04597090234","address":{"@type":"PostalAddress","streetAddress":"Via Luigi Einaudi 54","postalCode":"45100","addressLocality":"Rovigo","addressRegion":"RO","addressCountry":"IT"},"sameAs":["https://www.youtube.com/@Medi-Cleo"]},{"@type":"WebSite","@id":"https://medicleo.com/#website","url":"https://medicleo.com/","name":"Medicleo","inLanguage":"it-IT","publisher":{"@id":"https://medicleo.com/#organization"}},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Medicleo può evitare l’ingresso in RSA?","acceptedAnswer":{"@type":"Answer","text":"Può aiutare a restare a casa più a lungo quando le condizioni lo consentono, rimandando o evitando un ingresso non necessario. Non sostituisce una RSA per chi ha bisogno di assistenza sanitaria continuativa e non garantisce di evitare ricoveri: la decisione spetta alla famiglia insieme ai medici, valutando i bisogni e le risorse disponibili."}},{"@type":"Question","name":"Quanto si risparmia rispetto a una struttura?","acceptedAnswer":{"@type":"Answer","text":"Dipende dalla retta, dall’assistenza necessaria a domicilio e dagli altri costi. Il calcolatore nella sezione Il risparmio confronta gli importi della tua situazione su base mensile, annua e su tre anni. Non è un risparmio garantito: includi anche Medicleo dopo aver richiesto una proposta."}},{"@type":"Question","name":"È utile anche per enti pubblici e Comuni?","acceptedAnswer":{"@type":"Answer","text":"Può affiancare progetti di assistenza domiciliare integrata e monitoraggio di anziani soli sul territorio, mettendo le allerte a disposizione degli operatori incaricati. Ogni progetto richiede una valutazione dei bisogni, del consenso della persona, delle responsabilità di intervento e dell’organizzazione del servizio."}},{"@type":"Question","name":"Serve un dispositivo indossabile?","acceptedAnswer":{"@type":"Answer","text":"No. Medicleo utilizza un sensore radar installato nella stanza: la persona monitorata non deve indossare braccialetti, cerotti o altri dispositivi, e nulla viene posizionato sul letto."}},{"@type":"Question","name":"Come vengono protetti i dati?","acceptedAnswer":{"@type":"Answer","text":"Il sistema non utilizza telecamere né registra immagini. I dati rilevati sono accessibili solo alle persone autorizzate, come il personale della struttura o i familiari indicati, e sono trattati nel rispetto della normativa sulla protezione dei dati personali."}},{"@type":"Question","name":"Funziona anche di notte o al buio?","acceptedAnswer":{"@type":"Answer","text":"Sì. Il radar non ha bisogno di luce per funzionare, quindi il monitoraggio prosegue anche di notte, quando la persona riposa, senza disturbarne il sonno."}},{"@type":"Question","name":"Cosa succede in caso di allerta?","acceptedAnswer":{"@type":"Answer","text":"Quando il sistema rileva un evento critico, come una caduta o l'abbandono del letto, invia una notifica alle persone incaricate, che possono intervenire tempestivamente e consultare i dati in tempo reale."}},{"@type":"Question","name":"Come si installa?","acceptedAnswer":{"@type":"Answer","text":"Il sensore viene installato nella stanza, senza alcun contatto con la persona e senza modificare l'arredamento. Durante la demo ti illustriamo le modalità di installazione più adatte al tuo caso."}},{"@type":"Question","name":"Per chi è adatto Medicleo?","acceptedAnswer":{"@type":"Answer","text":"È pensato per RSA e strutture sanitarie che vogliono un supporto al lavoro del personale, e per le famiglie che assistono un anziano a domicilio e desiderano maggiore serenità. Medicleo è un sistema di monitoraggio e allerta, non uno strumento di diagnosi."}},{"@type":"Question","name":"Serve una connessione internet?","acceptedAnswer":{"@type":"Answer","text":"Sì. Per inviare le allerte e rendere consultabili i dati a distanza il sensore ha bisogno di una connessione alla rete. Durante la demo verifichiamo insieme la soluzione più adatta all'ambiente in cui verrà installato."}},{"@type":"Question","name":"Il sistema usa telecamere o microfoni?","acceptedAnswer":{"@type":"Answer","text":"No. Medicleo si basa su un sensore radar: non riprende immagini e non registra audio. Per questo può essere usato anche in camera da letto e in bagno senza ledere la riservatezza della persona."}},{"@type":"Question","name":"Cosa vede il familiare o l'operatore?","acceptedAnswer":{"@type":"Answer","text":"Chi è autorizzato può consultare l'andamento dei parametri monitorati, come frequenza cardiaca, frequenza respiratoria, qualità del sonno e presenza a letto, e riceve le notifiche in caso di evento critico."}},{"@type":"Question","name":"Funziona se nella stanza ci sono altre persone o animali?","acceptedAnswer":{"@type":"Answer","text":"Il sensore è pensato per monitorare una persona nella sua stanza. Se l'ambiente è condiviso, durante il sopralluogo valutiamo posizionamento e configurazione più adatti."}},{"@type":"Question","name":"Medicleo sostituisce il personale o la badante?","acceptedAnswer":{"@type":"Answer","text":"No. È un supporto a chi assiste: aiuta a sapere quando serve intervenire, ma non sostituisce la presenza e il lavoro delle persone che si prendono cura dell'anziano."}},{"@type":"Question","name":"Medicleo fa diagnosi?","acceptedAnswer":{"@type":"Answer","text":"No. Medicleo è un sistema di monitoraggio e allerta: segnala variazioni ed eventi a chi assiste. Le valutazioni sulla salute restano sempre al medico curante o al personale sanitario."}},{"@type":"Question","name":"Si può usare a casa di un anziano che vive da solo?","acceptedAnswer":{"@type":"Answer","text":"Sì, è uno dei casi per cui Medicleo è pensato: la persona continua a vivere a casa propria e i familiari ricevono una notifica se qualcosa non va, anche quando sono lontani."}}]}]}</script>
 </head>
 <body>
-  <button id="cookie-btn" class="justify-center whitespace-nowrap cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 transition-all h-9 fixed bottom-4 left-4 z-40 inline-flex items-center gap-1.5 rounded-full border border-border bg-card px-3.5 py-2 text-xs font-semibold text-primary shadow-soft hover:bg-secondary" type="button" aria-label="Cookie: modifica le preferenze">
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-cookie h-4 w-4" aria-hidden="true"><path d="M12 2a10 10 0 1 0 10 10 4 4 0 0 1-5-5 4 4 0 0 1-5-5"></path><path d="M8.5 8.5v.01"></path><path d="M16 15.5v.01"></path><path d="M12 12v.01"></path><path d="M11 17v.01"></path><path d="M7 14v.01"></path></svg>
-    Cookie
-  </button>
+<button id="cookie-btn" class="justify-center whitespace-nowrap cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 transition-all h-9 fixed bottom-4 left-4 z-40 inline-flex items-center gap-1.5 rounded-full border border-border bg-card px-3.5 py-2 text-xs font-semibold text-primary shadow-soft hover:bg-secondary" type="button" aria-label="Cookie: modifica le preferenze">
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-cookie h-4 w-4" aria-hidden="true"><path d="M12 2a10 10 0 1 0 10 10 4 4 0 0 1-5-5 4 4 0 0 1-5-5"></path><path d="M8.5 8.5v.01"></path><path d="M16 15.5v.01"></path><path d="M12 12v.01"></path><path d="M11 17v.01"></path><path d="M7 14v.01"></path></svg>
+Cookie
+</button>
 
-  <a href="#contenuto" class="sr-only focus:not-sr-only focus:fixed focus:left-3 focus:top-3 focus:z-50 focus:rounded-md focus:bg-card focus:px-4 focus:py-2">Vai al contenuto</a>
+<a href="#contenuto" class="sr-only focus:not-sr-only focus:fixed focus:left-3 focus:top-3 focus:z-50 focus:rounded-md focus:bg-card focus:px-4 focus:py-2">Vai al contenuto</a>
 
-  <header class="sticky top-0 z-40 border-b border-border/70 bg-background/85 backdrop-blur-md">
-    <div class="mx-auto flex h-18 max-w-6xl items-center justify-between gap-4 px-5 py-3">
-      <a href="#contenuto" class="flex items-center gap-2.5 rounded-md" aria-label="Medicleo, torna alla home">
-        <img src="https://medicleo.com/assets/medicleo-logo-DnmoDSbt.webp" alt="Logo Medicleo" width="44" height="44" class="h-11 w-11">
-        <span class="text-xl font-extrabold tracking-tight text-primary">Medicleo</span>
+<header class="sticky top-0 z-40 border-b border-border/70 bg-background/85 backdrop-blur-md">
+<div class="mx-auto flex h-18 max-w-6xl items-center justify-between gap-4 px-5 py-3">
+  <a href="#contenuto" class="flex items-center gap-2.5 rounded-md" aria-label="Medicleo, torna alla home">
+    <img src="https://medicleo.com/assets/medicleo-logo-DnmoDSbt.webp" alt="Logo Medicleo" width="44" height="44" class="h-11 w-11">
+    <span class="text-xl font-extrabold tracking-tight text-primary">Medicleo</span>
+  </a>
+  <nav aria-label="Menu principale" class="hidden lg:block">
+    <ul class="flex items-center gap-7 text-sm font-medium">
+      <li><a href="#problema" class="rounded text-foreground/80 transition-colors hover:text-primary">Perché a casa</a></li>
+      <li><a href="#soluzione" class="rounded text-foreground/80 transition-colors hover:text-primary">La soluzione</a></li>
+      <li><a href="#per-chi" class="rounded text-foreground/80 transition-colors hover:text-primary">Per chi</a></li>
+      <li><a href="#risparmio" class="rounded text-foreground/80 transition-colors hover:text-primary">Il risparmio</a></li>
+      <li><a href="#assistenza-domiciliare" class="rounded text-foreground/80 transition-colors hover:text-primary">Assistenza a domicilio</a></li>
+      <li><a href="#faq" class="rounded text-foreground/80 transition-colors hover:text-primary">FAQ</a></li>
+      <li><a href="#contatti" class="rounded text-foreground/80 transition-colors hover:text-primary">Contatti</a></li>
+    </ul>
+  </nav>
+  <div class="flex items-center gap-2">
+    <a href="#contatti" class="items-center justify-center gap-2 whitespace-nowrap text-sm font-medium cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 rounded-full bg-primary text-primary-foreground shadow-elegant hover:bg-primary/90 hover:-translate-y-0.5 transition-all h-9 px-4 py-2 hidden sm:inline-flex">Richiedi una demo</a>
+    <button id="menu-mobile-btn" class="gap-2 whitespace-nowrap text-sm font-medium cursor-pointer transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 hover:bg-accent hover:text-accent-foreground inline-flex h-10 w-10 items-center justify-center rounded-full text-primary lg:hidden" type="button" aria-expanded="false" aria-controls="menu-mobile" aria-label="Apri menu">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-menu h-5 w-5" aria-hidden="true"><path d="M4 5h16"></path><path d="M4 12h16"></path><path d="M4 19h16"></path></svg>
+    </button>
+  </div>
+</div>
+<div id="menu-mobile" class="hidden border-t border-border/70 bg-background px-5 py-4 lg:hidden">
+  <ul class="flex flex-col gap-3 text-sm font-medium">
+    <li><a href="#problema" class="block rounded py-1 text-foreground/80 hover:text-primary">Perché a casa</a></li>
+    <li><a href="#soluzione" class="block rounded py-1 text-foreground/80 hover:text-primary">La soluzione</a></li>
+    <li><a href="#per-chi" class="block rounded py-1 text-foreground/80 hover:text-primary">Per chi</a></li>
+    <li><a href="#risparmio" class="block rounded py-1 text-foreground/80 hover:text-primary">Il risparmio</a></li>
+    <li><a href="#assistenza-domiciliare" class="block rounded py-1 text-foreground/80 hover:text-primary">Assistenza a domicilio</a></li>
+    <li><a href="#faq" class="block rounded py-1 text-foreground/80 hover:text-primary">FAQ</a></li>
+    <li><a href="#contatti" class="block rounded py-1 text-foreground/80 hover:text-primary">Contatti</a></li>
+  </ul>
+</div>
+</header>
+
+<main id="contenuto">
+<section class="relative overflow-hidden bg-ink text-ink-foreground">
+  <img src="https://medicleo.com/assets/medicleo-radar-hero-6io_rX3r.webp" alt="Sensore radar Medicleo per il monitoraggio discreto di una persona a riposo" width="1024" height="1024" fetchpriority="high" class="absolute inset-0 h-full w-full object-cover object-center lg:object-right">
+  <div class="absolute inset-0 bg-ink/80" aria-hidden="true"></div>
+  <div class="relative mx-auto max-w-6xl px-5 py-6 sm:py-16">
+    <p class="flex items-center gap-2 text-sm font-semibold">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-shield-check h-5 w-5" aria-hidden="true"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"></path><path d="m9 12 2 2 4-4"></path></svg>
+      Medicleo · monitoraggio e allerta
+    </p>
+    <h1 class="mt-6 max-w-3xl text-3xl font-extrabold leading-tight sm:text-5xl">Restare a casa, in sicurezza. Anche quando si invecchia.</h1>
+    <p class="mt-6 max-w-2xl text-base leading-relaxed sm:text-lg">Medicleo veglia giorno e notte su anziani e persone fragili con un sensore radar non invasivo: allerte immediate a familiari e operatori, senza telecamere e senza nulla da indossare. Un'alternativa concreta all'ingresso in struttura, quando non è necessario.</p>
+    <div class="mt-8 flex flex-wrap gap-3">
+      <a href="#contatti" class="inline-flex items-center justify-center gap-2 whitespace-nowrap cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 rounded-full bg-background text-primary shadow-elegant hover:bg-secondary transition-all h-12 px-7 text-base font-semibold">
+        Richiedi una demo
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-right" aria-hidden="true"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
       </a>
-      <nav aria-label="Menu principale" class="hidden lg:block">
-        <ul class="flex items-center gap-7 text-sm font-medium">
-          <li><a href="#problema" class="rounded text-foreground/80 transition-colors hover:text-primary">Perché a casa</a></li>
-          <li><a href="#soluzione" class="rounded text-foreground/80 transition-colors hover:text-primary">La soluzione</a></li>
-          <li><a href="#per-chi" class="rounded text-foreground/80 transition-colors hover:text-primary">Per chi</a></li>
-          <li><a href="#risparmio" class="rounded text-foreground/80 transition-colors hover:text-primary">Il risparmio</a></li>
-          <li><a href="#assistenza-domiciliare" class="rounded text-foreground/80 transition-colors hover:text-primary">Assistenza a domicilio</a></li>
-          <li><a href="#contatti" class="rounded text-foreground/80 transition-colors hover:text-primary">Contatti</a></li>
-        </ul>
-      </nav>
-      <div class="flex items-center gap-2">
-        <a href="#contatti" class="items-center justify-center gap-2 whitespace-nowrap text-sm font-medium cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 rounded-full bg-primary text-primary-foreground shadow-elegant hover:bg-primary/90 hover:-translate-y-0.5 transition-all h-9 px-4 py-2 hidden sm:inline-flex">Richiedi una demo</a>
-        <button id="menu-mobile-btn" class="gap-2 whitespace-nowrap text-sm font-medium cursor-pointer transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 hover:bg-accent hover:text-accent-foreground inline-flex h-10 w-10 items-center justify-center rounded-full text-primary lg:hidden" type="button" aria-expanded="false" aria-controls="menu-mobile" aria-label="Apri menu">
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-menu h-5 w-5" aria-hidden="true"><path d="M4 5h16"></path><path d="M4 12h16"></path><path d="M4 19h16"></path></svg>
-        </button>
-      </div>
+      <a href="#problema" class="inline-flex items-center justify-center gap-2 whitespace-nowrap cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 rounded-full border border-primary/20 bg-card text-primary hover:bg-secondary transition-all h-12 px-7 text-base font-semibold">Perché restare a casa</a>
     </div>
-    <div id="menu-mobile" class="hidden border-t border-border/70 bg-background px-5 py-4 lg:hidden">
-      <ul class="flex flex-col gap-3 text-sm font-medium">
-        <li><a href="#problema" class="block rounded py-1 text-foreground/80 hover:text-primary">Perché a casa</a></li>
-        <li><a href="#soluzione" class="block rounded py-1 text-foreground/80 hover:text-primary">La soluzione</a></li>
-        <li><a href="#per-chi" class="block rounded py-1 text-foreground/80 hover:text-primary">Per chi</a></li>
-        <li><a href="#risparmio" class="block rounded py-1 text-foreground/80 hover:text-primary">Il risparmio</a></li>
-        <li><a href="#assistenza-domiciliare" class="block rounded py-1 text-foreground/80 hover:text-primary">Assistenza a domicilio</a></li>
-        <li><a href="#contatti" class="block rounded py-1 text-foreground/80 hover:text-primary">Contatti</a></li>
+    <p class="mt-7 max-w-2xl text-sm leading-relaxed">Un ausilio alla cura, non un sostituto dell'assistenza sanitaria continuativa. Restare a casa è una scelta da valutare con la famiglia e i medici.</p>
+  </div>
+</section>
+
+<section id="problema" class="mx-auto max-w-6xl px-5 py-16 sm:py-20">
+  <div class="mx-auto max-w-2xl text-center">
+    <p class="text-sm font-semibold uppercase tracking-[0.16em] text-teal">Il contesto</p>
+    <h2 class="mt-3 text-3xl font-extrabold tracking-tight text-foreground sm:text-4xl">Un Paese che invecchia</h2>
+    <p class="mt-4 text-lg leading-relaxed text-muted-foreground">Sempre più persone anziane e famiglie più piccole: portare la vigilanza a domicilio significa rispondere a un bisogno concreto, senza rinunciare alla propria vita.</p>
+  </div>
+  <div class="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+    <article class="flex flex-col rounded-2xl border border-border bg-card p-6">
+      <p class="text-3xl font-extrabold text-primary">34,5%</p>
+      <h3 class="mt-3 text-lg font-bold">Avrà almeno 65 anni nel 2050</h3>
+      <p class="mt-3 flex-1 text-sm leading-relaxed text-muted-foreground">Dal 24,7% del 2025, nello scenario mediano delle previsioni Istat: una popolazione più anziana, con nuovi bisogni di assistenza.</p>
+      <p class="mt-4 text-xs leading-relaxed text-muted-foreground">Fonte: <a href="https://www.istat.it/comunicato-stampa/previsioni-della-popolazione-residente-delle-famiglie-e-delle-forze-di-lavoro-base-1-1-2025/" target="_blank" rel="noopener noreferrer" class="underline underline-offset-2 hover:text-primary">Istat, previsioni base 1/1/2025 · 31 agosto 2026</a></p>
+    </article>
+    <article class="flex flex-col rounded-2xl border border-border bg-card p-6">
+      <p class="text-3xl font-extrabold text-primary">Oltre il 7%</p>
+      <h3 class="mt-3 text-lg font-bold">Avrà almeno 85 anni nel 2050</h3>
+      <p class="mt-3 flex-1 text-sm leading-relaxed text-muted-foreground">Dal 4,1% del 2025. Cresce il bisogno di vicinanza e supporto, anche nelle ore in cui i familiari non possono esserci.</p>
+      <p class="mt-4 text-xs leading-relaxed text-muted-foreground">Fonte: <a href="https://www.istat.it/comunicato-stampa/previsioni-della-popolazione-residente-delle-famiglie-e-delle-forze-di-lavoro-base-1-1-2025/" target="_blank" rel="noopener noreferrer" class="underline underline-offset-2 hover:text-primary">Istat, previsioni base 1/1/2025 · 31 agosto 2026</a></p>
+    </article>
+    <article class="flex flex-col rounded-2xl border border-border bg-card p-6">
+      <p class="text-3xl font-extrabold text-primary">425.780</p>
+      <h3 class="mt-3 text-lg font-bold">Posti letto residenziali complessivi</h3>
+      <p class="mt-3 flex-1 text-sm leading-relaxed text-muted-foreground">7,2 ogni 1.000 residenti, non tutti destinati agli anziani. Gli ospiti over 65 sono poco più di 291mila, quasi 239mila non autosufficienti.</p>
+      <p class="mt-4 text-xs leading-relaxed text-muted-foreground">Fonte: <a href="https://www.istat.it/wp-content/uploads/2026/01/Report-Presidi-2023.pdf" target="_blank" rel="noopener noreferrer" class="underline underline-offset-2 hover:text-primary">Istat, strutture residenziali al 1° gennaio 2024 · report</a></p>
+    </article>
+    <article class="flex flex-col rounded-2xl border border-border bg-card p-6">
+      <p class="text-3xl font-extrabold text-primary">1.015</p>
+      <h3 class="mt-3 text-lg font-bold">Anziani in attesa di RSA nelle Marche</h3>
+      <p class="mt-3 flex-1 text-sm leading-relaxed text-muted-foreground">Altri 6.635 in attesa nelle Residenze Protette, compresi 1.668 con demenza. Dati riportati nell'interrogazione n. 84: un esempio regionale, non nazionale.</p>
+      <p class="mt-4 text-xs leading-relaxed text-muted-foreground">Fonte: <a href="https://www.consiglio.marche.it/banche_dati_e_documentazione/atti_di_indirizzo_e_controllo/interrogazioni/" target="_blank" rel="noopener noreferrer" class="underline underline-offset-2 hover:text-primary">Consiglio regionale Marche, indice interrogazioni · n. 84, 15 gennaio 2026</a></p>
+    </article>
+  </div>
+</section>
+
+<section class="bg-muted py-16 sm:py-20">
+  <div class="mx-auto max-w-3xl px-5">
+    <h2 class="text-3xl font-extrabold sm:text-4xl">Le strutture non bastano, e non sempre servono</h2>
+    <p class="mt-5 text-lg leading-relaxed text-muted-foreground">Le strutture sono indispensabili per chi ha bisogno di assistenza sanitaria continuativa. Ma i posti disponibili e l'accesso ai servizi non sono uniformi sul territorio; le attese e il costo delle rette pesano sulle famiglie. Per chi può vivere a domicilio, una vigilanza continua può affiancare l'assistenza e aiutare a restare nella propria casa più a lungo.</p>
+    <p class="mt-5 leading-relaxed">Con circa 14,8 milioni di over 65 e poco più di 291mila anziani ospiti delle strutture, il confronto indicativo restituisce meno di 2 anziani su 100 in una struttura residenziale. La grande maggioranza vive fuori dalle strutture: è anche a casa che va portata la sicurezza.</p>
+    <p class="mt-3 text-sm text-muted-foreground">Elaborazione su dati Istat riferiti a date diverse (popolazione al 1° gennaio 2026, ospiti al 1° gennaio 2024): un confronto di ordine di grandezza, non una misura puntuale della copertura né del fabbisogno di posti.</p>
+    <p class="mt-4 text-xs leading-relaxed text-muted-foreground">Fonte: <a href="https://www.istat.it/comunicato-stampa/indicatori-demografici-anno-2025/" target="_blank" rel="noopener noreferrer" class="underline underline-offset-2 hover:text-primary">Istat, Indicatori demografici 2025</a></p>
+    <p class="mt-4 text-xs leading-relaxed text-muted-foreground">Fonte: <a href="https://www.istat.it/wp-content/uploads/2026/01/Report-Presidi-2023.pdf" target="_blank" rel="noopener noreferrer" class="underline underline-offset-2 hover:text-primary">Istat, strutture residenziali al 1° gennaio 2024 · report</a></p>
+    <p class="mt-6 leading-relaxed">In Lombardia, la retta media RSA riportata per il 2025 è circa <strong>2.312 € al mese</strong>, 76 € al giorno e 27.747 € all'anno. È un dato regionale, non una media nazionale; gli importi sono arrotondati nella fonte e i servizi inclusi possono variare.</p>
+    <p class="mt-4 text-xs leading-relaxed text-muted-foreground">Fonte: <a href="https://cislmilano.it/default/download/uploads.up_file.90742e59c51255ee.506167696e612052736120436f6e7175697374652064656c204c61766f726f2032332d362d32362e706466.pdf" target="_blank" rel="noopener noreferrer" class="underline underline-offset-2 hover:text-primary">CISL Milano, rassegna Conquiste del Lavoro · dati Lombardia 2025</a></p>
+  </div>
+</section>
+
+<section id="soluzione" class="mx-auto max-w-6xl px-5 py-16 sm:py-20">
+  <div class="mx-auto max-w-2xl text-center">
+    <p class="text-sm font-semibold uppercase tracking-[0.16em] text-teal">Medicleo</p>
+    <h2 class="mt-3 text-3xl font-extrabold tracking-tight text-foreground sm:text-4xl">La soluzione: la sicurezza arriva a casa</h2>
+    <p class="mt-4 text-lg leading-relaxed text-muted-foreground">Quando le condizioni permettono di restare a domicilio, Medicleo affianca familiari e operatori con monitoraggio continuo e allerte. La cura resta alle persone; il radar aiuta a sapere quando intervenire.</p>
+  </div>
+  <div class="mt-10 grid items-center gap-10 lg:grid-cols-2">
+    <img src="https://medicleo.com/assets/guardiano-1-BPtavAYL.webp" alt="Persona anziana nella propria stanza, con monitoraggio radar Medicleo" width="768" height="768" loading="lazy" class="mx-auto w-full max-w-sm rounded-2xl">
+    <div>
+      <ul class="space-y-5">
+        <li class="flex gap-4">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-heart-pulse mt-1 h-6 w-6 shrink-0 text-teal" aria-hidden="true"><path d="M2 9.5a5.5 5.5 0 0 1 9.591-3.676.56.56 0 0 0 .818 0A5.49 5.49 0 0 1 22 9.5c0 2.29-1.5 4-3 5.5l-5.492 5.313a2 2 0 0 1-3 .019L5 15c-1.5-1.5-3-3.2-3-5.5"></path><path d="M3.22 13H9.5l.5-1 2 4.5 2-7 1.5 3.5h5.27"></path></svg>
+          <div>
+            <h3 class="font-bold">Monitoraggio continuo</h3>
+            <p class="mt-1 leading-relaxed text-muted-foreground">Frequenza cardiaca e respiratoria, sonno e presenza a letto, senza contatto.</p>
+          </div>
+        </li>
+        <li class="flex gap-4">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-bell-ring mt-1 h-6 w-6 shrink-0 text-teal" aria-hidden="true"><path d="M10.268 21a2 2 0 0 0 3.464 0"></path><path d="M22 8c0-2.3-.8-4.3-2-6"></path><path d="M3.262 15.326A1 1 0 0 0 4 17h16a1 1 0 0 0 .74-1.673C19.41 13.956 18 12.499 18 8A6 6 0 0 0 6 8c0 4.499-1.411 5.956-2.738 7.326"></path><path d="M4 2C2.8 3.7 2 5.7 2 8"></path></svg>
+          <div>
+            <h3 class="font-bold">Allerte a chi può intervenire</h3>
+            <p class="mt-1 leading-relaxed text-muted-foreground">Notifiche in caso di caduta e abbandono del letto, giorno e notte.</p>
+          </div>
+        </li>
+        <li class="flex gap-4">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-smartphone mt-1 h-6 w-6 shrink-0 text-teal" aria-hidden="true"><rect width="14" height="20" x="5" y="2" rx="2" ry="2"></rect><path d="M12 18h.01"></path></svg>
+          <div>
+            <h3 class="font-bold">Dati in tempo reale</h3>
+            <p class="mt-1 leading-relaxed text-muted-foreground">Informazioni consultabili dai familiari e dagli operatori autorizzati.</p>
+          </div>
+        </li>
+        <li class="flex gap-4">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-eye-off mt-1 h-6 w-6 shrink-0 text-teal" aria-hidden="true"><path d="M10.733 5.076a10.744 10.744 0 0 1 11.205 6.575 1 1 0 0 1 0 .696 10.747 10.747 0 0 1-1.444 2.49"></path><path d="M14.084 14.158a3 3 0 0 1-4.242-4.242"></path><path d="M17.479 17.499a10.75 10.75 0 0 1-15.417-5.151 1 1 0 0 1 0-.696 10.75 10.75 0 0 1 4.446-5.143"></path><path d="m2 2 20 20"></path></svg>
+          <div>
+            <h3 class="font-bold">Nessuna telecamera</h3>
+            <p class="mt-1 leading-relaxed text-muted-foreground">Niente immagini o audio registrati e nulla da indossare.</p>
+          </div>
+        </li>
       </ul>
+      <a href="#assistenza-domiciliare" class="mt-8 inline-flex items-center gap-2 font-semibold text-primary underline underline-offset-4">Assistenza domiciliare: dati e opportunità</a>
     </div>
-  </header>
+  </div>
+  <div id="assistenza-domiciliare" class="mx-auto mt-10 max-w-3xl border-t border-border pt-8">
+    <h3 class="text-lg font-bold">Una direzione sostenuta anche dalle politiche per gli anziani</h3>
+    <p class="mt-3 leading-relaxed text-muted-foreground">La Legge 33/2023 e il D.Lgs. 29/2024 promuovono il sostegno alla domiciliarità e alla qualità della vita delle persone anziane. È un quadro di indirizzo, non un riconoscimento specifico di Medicleo né una promessa di contributi.</p>
+    <p class="mt-4 text-xs leading-relaxed text-muted-foreground">Fonte: <a href="https://www.gazzettaufficiale.it/eli/id/2023/03/30/23G00041/sg" target="_blank" rel="noopener noreferrer" class="underline underline-offset-2 hover:text-primary">Gazzetta Ufficiale, Legge 33/2023</a></p>
+    <p class="mt-4 text-xs leading-relaxed text-muted-foreground">Fonte: <a href="https://www.gazzettaufficiale.it/eli/id/2024/03/18/24G00050/sg" target="_blank" rel="noopener noreferrer" class="underline underline-offset-2 hover:text-primary">Gazzetta Ufficiale, D.Lgs. 29/2024</a></p>
+  </div>
+</section>
 
-  <main id="contenuto">
-    <section class="relative overflow-hidden bg-ink text-ink-foreground">
-      <img src="https://medicleo.com/assets/medicleo-radar-hero-6io_rX3r.webp" alt="Sensore radar Medicleo per il monitoraggio discreto di una persona a riposo" width="1024" height="1024" fetchpriority="high" class="absolute inset-0 h-full w-full object-cover object-center lg:object-right">
-      <div class="absolute inset-0 bg-ink/80" aria-hidden="true"></div>
-      <div class="relative mx-auto max-w-6xl px-5 py-6 sm:py-16">
-        <p class="flex items-center gap-2 text-sm font-semibold">
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-shield-check h-5 w-5" aria-hidden="true"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"></path><path d="m9 12 2 2 4-4"></path></svg>
-          Medicleo · monitoraggio e allerta
-        </p>
-        <h1 class="mt-6 max-w-3xl text-3xl font-extrabold leading-tight sm:text-5xl">Restare a casa, in sicurezza. Anche quando si invecchia.</h1>
-        <p class="mt-6 max-w-2xl text-base leading-relaxed sm:text-lg">Medicleo veglia giorno e notte su anziani e persone fragili con un sensore radar non invasivo: allerte immediate a familiari e operatori, senza telecamere e senza nulla da indossare. Un'alternativa concreta all'ingresso in struttura, quando non è necessario.</p>
-        <div class="mt-8 flex flex-wrap gap-3">
-          <a href="#contatti" class="inline-flex items-center justify-center gap-2 whitespace-nowrap cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 rounded-full bg-background text-primary shadow-elegant hover:bg-secondary transition-all h-12 px-7 text-base font-semibold">
-            Richiedi una demo
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-right" aria-hidden="true"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
-          </a>
-          <a href="#problema" class="inline-flex items-center justify-center gap-2 whitespace-nowrap cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 rounded-full border border-primary/20 bg-card text-primary hover:bg-secondary transition-all h-12 px-7 text-base font-semibold">Perché restare a casa</a>
-        </div>
-        <p class="mt-7 max-w-2xl text-sm leading-relaxed">Un ausilio alla cura, non un sostituto dell'assistenza sanitaria continuativa. Restare a casa è una scelta da valutare con la famiglia e i medici.</p>
-      </div>
-    </section>
+<section id="vantaggi" class="bg-muted py-16 sm:py-20">
+  <div class="mx-auto max-w-6xl px-5">
+    <div class="mx-auto max-w-2xl text-center">
+      <p class="text-sm font-semibold uppercase tracking-[0.16em] text-teal">Qualità della vita</p>
+      <h2 class="mt-3 text-3xl font-extrabold tracking-tight text-foreground sm:text-4xl">La casa è più di un luogo</h2>
+      <p class="mt-4 text-lg leading-relaxed text-muted-foreground">Dove possibile, restare nel proprio ambiente significa preservare ciò che rende ogni giornata familiare. La sicurezza sostiene l'autonomia, non la cancella.</p>
+    </div>
+    <div class="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+      <article class="rounded-2xl border border-border bg-card p-6">
+        <h3 class="text-lg font-bold">Autonomia e dignità</h3>
+        <p class="mt-3 leading-relaxed text-muted-foreground">Continuare a scegliere i propri ritmi, con un supporto discreto che non prende il posto della persona.</p>
+      </article>
+      <article class="rounded-2xl border border-border bg-card p-6">
+        <h3 class="text-lg font-bold">Abitudini e affetti</h3>
+        <p class="mt-3 leading-relaxed text-muted-foreground">Restare tra i propri ricordi, vicino ai familiari e alla comunità che si conosce.</p>
+      </article>
+      <article class="rounded-2xl border border-border bg-card p-6">
+        <h3 class="text-lg font-bold">Serenità per i familiari</h3>
+        <p class="mt-3 leading-relaxed text-muted-foreground">Ricevere allerte anche a distanza e organizzare una risposta con chi si prende cura della persona.</p>
+      </article>
+      <article class="rounded-2xl border border-border bg-card p-6">
+        <h3 class="text-lg font-bold">Privacy</h3>
+        <p class="mt-3 leading-relaxed text-muted-foreground">Nessuna telecamera, nessun audio registrato: la casa resta uno spazio privato.</p>
+      </article>
+    </div>
+  </div>
+</section>
 
-    <section id="problema" class="mx-auto max-w-6xl px-5 py-16 sm:py-20">
-      <div class="mx-auto max-w-2xl text-center">
-        <p class="text-sm font-semibold uppercase tracking-[0.16em] text-teal">Il contesto</p>
-        <h2 class="mt-3 text-3xl font-extrabold tracking-tight text-foreground sm:text-4xl">Un Paese che invecchia</h2>
-        <p class="mt-4 text-lg leading-relaxed text-muted-foreground">Sempre più persone anziane e famiglie più piccole: portare la vigilanza a domicilio significa rispondere a un bisogno concreto, senza rinunciare alla propria vita.</p>
+<section id="risparmio" class="mx-auto max-w-5xl px-5 py-16 sm:py-20">
+  <div class="mx-auto max-w-2xl text-center">
+    <p class="text-sm font-semibold uppercase tracking-[0.16em] text-teal">Il risparmio</p>
+    <h2 class="mt-3 text-3xl font-extrabold tracking-tight text-foreground sm:text-4xl">Una scelta di vita. Anche una scelta economica.</h2>
+    <p class="mt-4 text-lg leading-relaxed text-muted-foreground">Quando la permanenza a casa è appropriata, il confronto dei costi può aiutare famiglie ed enti a valutare una soluzione sostenibile. Non tutte le situazioni producono un risparmio.</p>
+  </div>
+  <div class="mt-10 grid gap-8 border-y border-border py-7 sm:grid-cols-2">
+    <div>
+      <h3 class="text-lg font-bold">In struttura</h3>
+      <p class="mt-3 leading-relaxed text-muted-foreground">Retta, servizi inclusi ed eventuali extra. Una risposta necessaria per chi ha bisogni non gestibili a domicilio.</p>
+    </div>
+    <div>
+      <h3 class="text-lg font-bold">A casa con Medicleo</h3>
+      <p class="mt-3 leading-relaxed text-muted-foreground">Assistenza proporzionata ai bisogni, monitoraggio e allerta, abitazione e spese quotidiane. Serve sempre qualcuno in grado di rispondere alle allerte.</p>
+    </div>
+  </div>
+  <div class="mt-10 rounded-2xl border border-border bg-card p-6 sm:p-8">
+    <h3 class="text-xl font-bold">Confronta i costi della tua situazione</h3>
+    <div class="mt-6 grid gap-6 sm:grid-cols-2">
+      <div>
+        <label for="retta-mensile" class="block text-sm font-semibold">Retta mensile della struttura (€)</label>
+        <input id="retta-mensile" type="number" min="0" step="10" value="2312" class="mt-2 w-full rounded-lg border border-border bg-background px-3.5 py-2.5 text-sm">
+        <p class="mt-2 text-xs text-muted-foreground">Fonte: CISL Milano, rassegna Conquiste del Lavoro · dati Lombardia 2025. Valore iniziale: Lombardia 2025, modificabile.</p>
       </div>
-      <div class="mt-10">
-        <div class="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-          <article class="flex flex-col rounded-2xl border border-border bg-card p-6">
-            <p class="text-3xl font-extrabold text-primary">34,5%</p>
-            <h3 class="mt-3 text-lg font-bold">Avrà almeno 65 anni nel 2050</h3>
-            <p class="mt-3 flex-1 text-sm leading-relaxed text-muted-foreground">Dal 24,7% del 2025, nello scenario mediano delle previsioni Istat: una popolazione più anziana, con nuovi bisogni di assistenza.</p>
-            <p class="mt-4 text-xs leading-relaxed text-muted-foreground">Fonte: <a href="https://www.istat.it/comunicato-stampa/previsioni-della-popolazione-residente-delle-famiglie-e-delle-forze-di-lavoro-base-1-1-2025/" target="_blank" rel="noopener noreferrer" class="underline underline-offset-2 hover:text-primary">Istat, previsioni base 1/1/2025 · 31 agosto 2026</a></p>
-          </article>
-          <article class="flex flex-col rounded-2xl border border-border bg-card p-6">
-            <p class="text-3xl font-extrabold text-primary">Oltre il 7%</p>
-            <h3 class="mt-3 text-lg font-bold">Avrà almeno 85 anni nel 2050</h3>
-            <p class="mt-3 flex-1 text-sm leading-relaxed text-muted-foreground">Dal 4,1% del 2025. Cresce il bisogno di vicinanza e supporto, anche nelle ore in cui i familiari non possono esserci.</p>
-            <p class="mt-4 text-xs leading-relaxed text-muted-foreground">Fonte: <a href="https://www.istat.it/comunicato-stampa/previsioni-della-popolazione-residente-delle-famiglie-e-delle-forze-di-lavoro-base-1-1-2025/" target="_blank" rel="noopener noreferrer" class="underline underline-offset-2 hover:text-primary">Istat, previsioni base 1/1/2025 · 31 agosto 2026</a></p>
-          </article>
-          <article class="flex flex-col rounded-2xl border border-border bg-card p-6">
-            <p class="text-3xl font-extrabold text-primary">425.780</p>
-            <h3 class="mt-3 text-lg font-bold">Posti letto residenziali complessivi</h3>
-            <p class="mt-3 flex-1 text-sm leading-relaxed text-muted-foreground">7,2 ogni 1.000 residenti, non tutti destinati agli anziani. Gli ospiti over 65 sono poco più di 291mila, quasi 239mila non autosufficienti.</p>
-            <p class="mt-4 text-xs leading-relaxed text-muted-foreground">Fonte: <a href="https://www.istat.it/wp-content/uploads/2026/01/Report-Presidi-2023.pdf" target="_blank" rel="noopener noreferrer" class="underline underline-offset-2 hover:text-primary">Istat, strutture residenziali al 1° gennaio 2024 · report</a></p>
-          </article>
-          <article class="flex flex-col rounded-2xl border border-border bg-card p-6">
-            <p class="text-3xl font-extrabold text-primary">1.015</p>
-            <h3 class="mt-3 text-lg font-bold">Anziani in attesa di RSA nelle Marche</h3>
-            <p class="mt-3 flex-1 text-sm leading-relaxed text-muted-foreground">Altri 6.635 in attesa nelle Residenze Protette, compresi 1.668 con demenza. Dati riportati nell'interrogazione n. 84: un esempio regionale, non nazionale.</p>
-            <p class="mt-4 text-xs leading-relaxed text-muted-foreground">Fonte: <a href="https://www.consiglio.marche.it/banche_dati_e_documentazione/atti_di_indirizzo_e_controllo/interrogazioni/" target="_blank" rel="noopener noreferrer" class="underline underline-offset-2 hover:text-primary">Consiglio regionale Marche, indice interrogazioni · n. 84, 15 gennaio 2026</a></p>
-          </article>
-        </div>
+      <div>
+        <label for="costo-domicilio" class="block text-sm font-semibold">Costo mensile della soluzione a domicilio (€)</label>
+        <input id="costo-domicilio" type="number" min="0" step="10" placeholder="Inserisci badante/assistenza, Medicleo e gli altri costi" class="mt-2 w-full rounded-lg border border-border bg-background px-3.5 py-2.5 text-sm">
+        <p class="mt-2 text-xs text-muted-foreground">Inserisci badante/assistenza, Medicleo e gli altri costi a domicilio. Il prezzo di Medicleo non è ancora disponibile: richiedi una proposta prima di includerlo nella stima.</p>
       </div>
-    </section>
+    </div>
+    <div id="risparmio-output" class="mt-6 rounded-xl bg-muted p-4 text-sm text-muted-foreground">La stima sarà disponibile dopo aver inserito entrambi i costi.</div>
+    <p class="mt-4 text-xs leading-relaxed text-muted-foreground">Stima indicativa, i costi reali dipendono dalla situazione e dalla regione. Il confronto assume costi mensili costanti, senza rivalutazioni, contributi o spese straordinarie. Considera tutti i servizi necessari: le due soluzioni non sono equivalenti per ogni bisogno assistenziale.</p>
+  </div>
+</section>
 
-    <section class="bg-muted py-16 sm:py-20">
-      <div class="mx-auto max-w-3xl px-5">
-        <h2 class="text-3xl font-extrabold sm:text-4xl">Le strutture non bastano, e non sempre servono</h2>
-        <p class="mt-5 text-lg leading-relaxed text-muted-foreground">Le strutture sono indispensabili per chi ha bisogno di assistenza sanitaria continuativa. Ma i posti disponibili e l'accesso ai servizi non sono uniformi sul territorio; le attese e il costo delle rette pesano sulle famiglie. Per chi può vivere a domicilio, una vigilanza continua può affiancare l'assistenza e aiutare a restare nella propria casa più a lungo.</p>
-        <p class="mt-5 leading-relaxed">Con circa 14,8 milioni di over 65 e poco più di 291mila anziani ospiti delle strutture, il confronto indicativo restituisce meno di 2 anziani su 100 in una struttura residenziale. La grande maggioranza vive fuori dalle strutture: è anche a casa che va portata la sicurezza.</p>
-        <p class="mt-3 text-sm text-muted-foreground">Elaborazione su dati Istat riferiti a date diverse (popolazione al 1° gennaio 2026, ospiti al 1° gennaio 2024): un confronto di ordine di grandezza, non una misura puntuale della copertura né del fabbisogno di posti.</p>
-        <p class="mt-4 text-xs leading-relaxed text-muted-foreground">Fonte: <a href="https://www.istat.it/comunicato-stampa/indicatori-demografici-anno-2025/" target="_blank" rel="noopener noreferrer" class="underline underline-offset-2 hover:text-primary">Istat, Indicatori demografici 2025</a></p>
-        <p class="mt-4 text-xs leading-relaxed text-muted-foreground">Fonte: <a href="https://www.istat.it/wp-content/uploads/2026/01/Report-Presidi-2023.pdf" target="_blank" rel="noopener noreferrer" class="underline underline-offset-2 hover:text-primary">Istat, strutture residenziali al 1° gennaio 2024 · report</a></p>
-        <p class="mt-6 leading-relaxed">In Lombardia, la retta media RSA riportata per il 2025 è circa <strong>2.312 € al mese</strong>, 76 € al giorno e 27.747 € all'anno. È un dato regionale, non una media nazionale; gli importi sono arrotondati nella fonte e i servizi inclusi possono variare.</p>
-        <p class="mt-4 text-xs leading-relaxed text-muted-foreground">Fonte: <a href="https://cislmilano.it/default/download/uploads.up_file.90742e59c51255ee.506167696e612052736120436f6e7175697374652064656c204c61766f726f2032332d362d32362e706466.pdf" target="_blank" rel="noopener noreferrer" class="underline underline-offset-2 hover:text-primary">CISL Milano, rassegna Conquiste del Lavoro · dati Lombardia 2025</a></p>
-      </div>
-    </section>
+<section id="per-chi" class="bg-muted py-16 sm:py-20">
+  <div class="mx-auto max-w-6xl px-5">
+    <div class="mx-auto max-w-2xl text-center">
+      <p class="text-sm font-semibold uppercase tracking-[0.16em] text-teal">Per chi</p>
+      <h2 class="mt-3 text-3xl font-extrabold tracking-tight text-foreground sm:text-4xl">Una rete intorno alla persona</h2>
+      <p class="mt-4 text-lg leading-relaxed text-muted-foreground">Famiglie, enti e servizi possono collaborare per sostenere chi può restare a casa e affiancare chi opera nelle strutture.</p>
+    </div>
+    <div class="mt-10 grid gap-6 lg:grid-cols-3">
+      <article class="rounded-2xl border border-border bg-card p-6">
+        <h3 class="text-lg font-bold">Famiglie</h3>
+        <ul class="mt-4 space-y-2 text-sm text-muted-foreground">
+          <li>• Un supporto per chi può restare a casa propria</li>
+          <li>• Allerte ai familiari e dati consultabili a distanza</li>
+          <li>• Una scelta da valutare insieme al medico e a chi assiste</li>
+        </ul>
+      </article>
+      <article class="rounded-2xl border border-border bg-card p-6">
+        <h3 class="text-lg font-bold">Enti pubblici, Comuni e ASL</h3>
+        <ul class="mt-4 space-y-2 text-sm text-muted-foreground">
+          <li>• Supporto ai progetti di domiciliarità e monitoraggio sul territorio</li>
+          <li>• Allerte e dati consultabili dagli operatori incaricati</li>
+          <li>• Valutazione di bisogni, consenso e responsabilità operative</li>
+        </ul>
+      </article>
+      <article class="rounded-2xl border border-border bg-card p-6">
+        <h3 class="text-lg font-bold">RSA e strutture sanitarie</h3>
+        <ul class="mt-4 space-y-2 text-sm text-muted-foreground">
+          <li>• Supporto al lavoro del personale di cura e assistenza</li>
+          <li>• Monitoraggio discreto senza dispositivi indossabili</li>
+          <li>• Notifiche tempestive su eventi critici e presenza a letto</li>
+        </ul>
+      </article>
+    </div>
+  </div>
+</section>
 
-    <section id="soluzione" class="mx-auto max-w-6xl px-5 py-16 sm:py-20">
-      <div class="mx-auto max-w-2xl text-center">
-        <p class="text-sm font-semibold uppercase tracking-[0.16em] text-teal">Medicleo</p>
-        <h2 class="mt-3 text-3xl font-extrabold tracking-tight text-foreground sm:text-4xl">La soluzione: la sicurezza arriva a casa</h2>
-        <p class="mt-4 text-lg leading-relaxed text-muted-foreground">Quando le condizioni permettono di restare a domicilio, Medicleo affianca familiari e operatori con monitoraggio continuo e allerte. La cura resta alle persone; il radar aiuta a sapere quando intervenire.</p>
-      </div>
-      <div class="mt-10 grid items-center gap-10 lg:grid-cols-2">
-        <img src="https://medicleo.com/assets/guardiano-1-BPtavAYL.webp" alt="Persona anziana nella propria stanza, con monitoraggio radar Medicleo" width="768" height="768" loading="lazy" class="mx-auto w-full max-w-sm rounded-2xl">
-        <div>
-          <ul class="space-y-5">
-            <li class="flex gap-4">
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-heart-pulse mt-1 h-6 w-6 shrink-0 text-teal" aria-hidden="true"><path d="M2 9.5a5.5 5.5 0 0 1 9.591-3.676.56.56 0 0 0 .818 0A5.49 5.49 0 0 1 22 9.5c0 2.29-1.5 4-3 5.5l-5.492 5.313a2 2 0 0 1-3 .019L5 15c-1.5-1.5-3-3.2-3-5.5"></path><path d="M3.22 13H9.5l.5-1 2 4.5 2-7 1.5 3.5h5.27"></path></svg>
-              <div>
-                <h3 class="font-bold">Monitoraggio continuo</h3>
-                <p class="mt-1 leading-relaxed text-muted-foreground">Frequenza cardiaca e respiratoria, sonno e presenza a letto, senza contatto.</p>
-              </div>
-            </li>
-            <li class="flex gap-4">
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-bell-ring mt-1 h-6 w-6 shrink-0 text-teal" aria-hidden="true"><path d="M10.268 21a2 2 0 0 0 3.464 0"></path><path d="M22 8c0-2.3-.8-4.3-2-6"></path><path d="M3.262 15.326A1 1 0 0 0 4 17h16a1 1 0 0 0 .74-1.673C19.41 13.956 18 12.499 18 8A6 6 0 0 0 6 8c0 4.499-1.411 5.956-2.738 7.326"></path><path d="M4 2C2.8 3.7 2 5.7 2 8"></path></svg>
-              <div>
-                <h3 class="font-bold">Allerte a chi può intervenire</h3>
-                <p class="mt-1 leading-relaxed text-muted-foreground">Notifiche in caso di caduta e abbandono del letto, giorno e notte.</p>
-              </div>
-            </li>
-            <li class="flex gap-4">
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-smartphone mt-1 h-6 w-6 shrink-0 text-teal" aria-hidden="true"><rect width="14" height="20" x="5" y="2" rx="2" ry="2"></rect><path d="M12 18h.01"></path></svg>
-              <div>
-                <h3 class="font-bold">Dati in tempo reale</h3>
-                <p class="mt-1 leading-relaxed text-muted-foreground">Informazioni consultabili dai familiari e dagli operatori autorizzati.</p>
-              </div>
-            </li>
-            <li class="flex gap-4">
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-eye-off mt-1 h-6 w-6 shrink-0 text-teal" aria-hidden="true"><path d="M10.733 5.076a10.744 10.744 0 0 1 11.205 6.575 1 1 0 0 1 0 .696 10.747 10.747 0 0 1-1.444 2.49"></path><path d="M14.084 14.158a3 3 0 0 1-4.242-4.242"></path><path d="M17.479 17.499a10.75 10.75 0 0 1-15.417-5.151 1 1 0 0 1 0-.696 10.75 10.75 0 0 1 4.446-5.143"></path><path d="m2 2 20 20"></path></svg>
-              <div>
-                <h3 class="font-bold">Nessuna telecamera</h3>
-                <p class="mt-1 leading-relaxed text-muted-foreground">Niente immagini o audio registrati e nulla da indossare.</p>
-              </div>
-            </li>
-          </ul>
-          <a href="#assistenza-domiciliare" class="mt-8 inline-flex items-center gap-2 font-semibold text-primary underline underline-offset-4">Assistenza domiciliare: dati e opportunità</a>
-        </div>
-      </div>
-      <div id="assistenza-domiciliare" class="mx-auto mt-10 max-w-3xl border-t border-border pt-8">
-        <h3 class="text-lg font-bold">Una direzione sostenuta anche dalle politiche per gli anziani</h3>
-        <p class="mt-3 leading-relaxed text-muted-foreground">La Legge 33/2023 e il D.Lgs. 29/2024 promuovono il sostegno alla domiciliarità e alla qualità della vita delle persone anziane. È un quadro di indirizzo, non un riconoscimento specifico di Medicleo né una promessa di contributi.</p>
-        <p class="mt-4 text-xs leading-relaxed text-muted-foreground">Fonte: <a href="https://www.gazzettaufficiale.it/eli/id/2023/03/30/23G00041/sg" target="_blank" rel="noopener noreferrer" class="underline underline-offset-2 hover:text-primary">Gazzetta Ufficiale, Legge 33/2023</a></p>
-        <p class="mt-4 text-xs leading-relaxed text-muted-foreground">Fonte: <a href="https://www.gazzettaufficiale.it/eli/id/2024/03/18/24G00050/sg" target="_blank" rel="noopener noreferrer" class="underline underline-offset-2 hover:text-primary">Gazzetta Ufficiale, D.Lgs. 29/2024</a></p>
-      </div>
-    </section>
+<section id="faq" class="mx-auto max-w-4xl px-5 py-16 sm:py-20">
+  <div class="mx-auto max-w-2xl text-center">
+    <p class="text-sm font-semibold uppercase tracking-[0.16em] text-teal">Domande frequenti</p>
+    <h2 class="mt-3 text-3xl font-extrabold tracking-tight text-foreground sm:text-4xl">FAQ</h2>
+  </div>
+  <div class="mt-10 space-y-3">
+    <details class="rounded-2xl border border-border bg-card p-5">
+      <summary class="cursor-pointer font-bold">Medicleo può evitare l’ingresso in RSA?</summary>
+      <p class="mt-3 text-sm leading-relaxed text-muted-foreground">Può aiutare a restare a casa più a lungo quando le condizioni lo consentono, rimandando o evitando un ingresso non necessario. Non sostituisce una RSA per chi ha bisogno di assistenza sanitaria continuativa e non garantisce di evitare ricoveri: la decisione spetta alla famiglia insieme ai medici, valutando i bisogni e le risorse disponibili.</p>
+    </details>
+    <details class="rounded-2xl border border-border bg-card p-5">
+      <summary class="cursor-pointer font-bold">Serve un dispositivo indossabile?</summary>
+      <p class="mt-3 text-sm leading-relaxed text-muted-foreground">No. Medicleo utilizza un sensore radar installato nella stanza: la persona monitorata non deve indossare braccialetti, cerotti o altri dispositivi, e nulla viene posizionato sul letto.</p>
+    </details>
+    <details class="rounded-2xl border border-border bg-card p-5">
+      <summary class="cursor-pointer font-bold">Come vengono protetti i dati e la privacy?</summary>
+      <p class="mt-3 text-sm leading-relaxed text-muted-foreground">Il sistema non utilizza telecamere né registra immagini o audio. I dati rilevati sono accessibili solo alle persone autorizzate, come il personale della struttura o i familiari indicati, nel rispetto della normativa sulla protezione dei dati personali.</p>
+    </details>
+    <details class="rounded-2xl border border-border bg-card p-5">
+      <summary class="cursor-pointer font-bold">Cosa succede in caso di allerta?</summary>
+      <p class="mt-3 text-sm leading-relaxed text-muted-foreground">Quando il sistema rileva un evento critico, come una caduta o l'abbandono del letto, invia una notifica alle persone incaricate, che possono intervenire tempestivamente e consultare i dati in tempo reale.</p>
+    </details>
+    <details class="rounded-2xl border border-border bg-card p-5">
+      <summary class="cursor-pointer font-bold">Medicleo fa diagnosi o sostituisce il personale?</summary>
+      <p class="mt-3 text-sm leading-relaxed text-muted-foreground">No. Medicleo è un sistema di monitoraggio e allerta: segnala variazioni ed eventi a chi assiste, ma non sostituisce la presenza umana e non effettua diagnosi mediche.</p>
+    </details>
+  </div>
+</section>
 
-    <section id="vantaggi" class="bg-muted py-16 sm:py-20">
-      <div class="mx-auto max-w-6xl px-5">
-        <div class="mx-auto max-w-2xl text-center">
-          <p class="text-sm font-semibold uppercase tracking-[0.16em] text-teal">Qualità della vita</p>
-          <h2 class="mt-3 text-3xl font-extrabold tracking-tight text-foreground sm:text-4xl">La casa è più di un luogo</h2>
-          <p class="mt-4 text-lg leading-relaxed text-muted-foreground">Dove possibile, restare nel proprio ambiente significa preservare ciò che rende ogni giornata familiare. La sicurezza sostiene l'autonomia, non la cancella.</p>
-        </div>
-        <div class="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-          <article class="rounded-2xl border border-border bg-card p-6">
-            <h3 class="text-lg font-bold">Autonomia e dignità</h3>
-            <p class="mt-3 leading-relaxed text-muted-foreground">Continuare a scegliere i propri ritmi, con un supporto discreto che non prende il posto della persona.</p>
-          </article>
-          <article class="rounded-2xl border border-border bg-card p-6">
-            <h3 class="text-lg font-bold">Abitudini e affetti</h3>
-            <p class="mt-3 leading-relaxed text-muted-foreground">Restare tra i propri ricordi, vicino ai familiari e alla comunità che si conosce.</p>
-          </article>
-          <article class="rounded-2xl border border-border bg-card p-6">
-            <h3 class="text-lg font-bold">Serenità per i familiari</h3>
-            <p class="mt-3 leading-relaxed text-muted-foreground">Ricevere allerte anche a distanza e organizzare una risposta con chi si prende cura della persona.</p>
-          </article>
-          <article class="rounded-2xl border border-border bg-card p-6">
-            <h3 class="text-lg font-bold">Privacy</h3>
-            <p class="mt-3 leading-relaxed text-muted-foreground">Nessuna telecamera, nessun audio registrato: la casa resta uno spazio privato.</p>
-          </article>
-        </div>
+<section id="contatti" class="bg-muted py-16 sm:py-20">
+  <div class="mx-auto max-w-4xl px-5">
+    <div class="rounded-2xl border border-border bg-card p-6 sm:p-10">
+      <p class="text-sm font-semibold uppercase tracking-[0.16em] text-teal">Contatti</p>
+      <h2 class="mt-3 text-3xl font-extrabold tracking-tight text-foreground">Richiedi una demo</h2>
+      <p class="mt-3 text-muted-foreground">Medicleo è sviluppato da <strong>Evolve S.r.l.</strong> · Via Luigi Einaudi 54, 45100 Rovigo (RO).</p>
+      <div class="mt-6 grid gap-4 text-sm sm:grid-cols-2">
+        <div>Email: <a href="mailto:info@medicleo.com" class="font-semibold text-primary underline">info@medicleo.com</a></div>
+        <div>Telefono: <a href="tel:+390425090621" class="font-semibold text-primary underline">+39 0425 090621</a></div>
       </div>
-    </section>
-
-    <section id="risparmio" class="mx-auto max-w-5xl px-5 py-16 sm:py-20">
-      <div class="mx-auto max-w-2xl text-center">
-        <p class="text-sm font-semibold uppercase tracking-[0.16em] text-teal">Il risparmio</p>
-        <h2 class="mt-3 text-3xl font-extrabold tracking-tight text-foreground sm:text-4xl">Una scelta di vita. Anche una scelta economica.</h2>
-        <p class="mt-4 text-lg leading-relaxed text-muted-foreground">Quando la permanenza a casa è appropriata, il confronto dei costi può aiutare famiglie ed enti a valutare una soluzione sostenibile. Non tutte le situazioni producono un risparmio.</p>
-      </div>
-      <div class="mt-10 grid gap-8 border-y border-border py-7 sm:grid-cols-2">
-        <div>
-          <h3 class="text-lg font-bold">In struttura</h3>
-          <p class="mt-3 leading-relaxed text-muted-foreground">Retta, servizi inclusi ed eventuali extra. Una risposta necessaria per chi ha bisogni non gestibili a domicilio.</p>
-        </div>
-        <div>
-          <h3 class="text-lg font-bold">A casa con Medicleo</h3>
-          <p class="mt-3 leading-relaxed text-muted-foreground">Assistenza proporzionata ai bisogni, monitoraggio e allerta, abitazione e spese quotidiane. Serve sempre qualcuno in grado di rispondere alle allerte.</p>
-        </div>
-      </div>
-      <div class="mt-10 rounded-2xl border border-border bg-card p-6 sm:p-8">
-        <h3 class="text-xl font-bold">Confronta i costi della tua situazione</h3>
-        <div class="mt-6 grid gap-6 sm:grid-cols-2">
+      <form id="demo-form" class="mt-8 space-y-4">
+        <div class="grid gap-4 sm:grid-cols-2">
           <div>
-            <label for="retta-mensile" class="block text-sm font-semibold">Retta mensile della struttura (€)</label>
-            <input id="retta-mensile" type="number" min="0" step="10" value="2312" class="mt-2 w-full rounded-lg border border-border bg-background px-3.5 py-2.5 text-sm">
-            <p class="mt-2 text-xs text-muted-foreground">Fonte: CISL Milano, rassegna Conquiste del Lavoro · dati Lombardia 2025. Valore iniziale: Lombardia 2025, modificabile.</p>
+            <label for="nome" class="block text-sm font-semibold">Nome e cognome</label>
+            <input id="nome" name="nome" type="text" required placeholder="Il tuo nome" class="mt-1.5 w-full rounded-lg border border-border bg-background px-3.5 py-2.5 text-sm">
           </div>
           <div>
-            <label for="costo-domicilio" class="block text-sm font-semibold">Costo mensile della soluzione a domicilio (€)</label>
-            <input id="costo-domicilio" type="number" min="0" step="10" placeholder="Inserisci badante/assistenza, Medicleo e gli altri costi" class="mt-2 w-full rounded-lg border border-border bg-background px-3.5 py-2.5 text-sm">
-            <p class="mt-2 text-xs text-muted-foreground">Inserisci badante/assistenza, Medicleo e gli altri costi a domicilio. Il prezzo di Medicleo non è ancora disponibile: richiedi una proposta prima di includerlo nella stima.</p>
+            <label for="email" class="block text-sm font-semibold">Email</label>
+            <input id="email" name="email" type="email" required placeholder="nome@esempio.it" class="mt-1.5 w-full rounded-lg border border-border bg-background px-3.5 py-2.5 text-sm">
           </div>
         </div>
-        <div id="risparmio-output" class="mt-6 rounded-xl bg-muted p-4 text-sm text-muted-foreground">La stima sarà disponibile dopo aver inserito entrambi i costi.</div>
-        <p class="mt-4 text-xs leading-relaxed text-muted-foreground">Stima indicativa, i costi reali dipendono dalla situazione e dalla regione. Il confronto assume costi mensili costanti, senza rivalutazioni, contributi o spese straordinarie. Considera tutti i servizi necessari: le due soluzioni non sono equivalenti per ogni bisogno assistenziale.</p>
-      </div>
-    </section>
-
-    <section id="per-chi" class="bg-muted py-16 sm:py-20">
-      <div class="mx-auto max-w-6xl px-5">
-        <div class="mx-auto max-w-2xl text-center">
-          <p class="text-sm font-semibold uppercase tracking-[0.16em] text-teal">Per chi</p>
-          <h2 class="mt-3 text-3xl font-extrabold tracking-tight text-foreground sm:text-4xl">Una rete intorno alla persona</h2>
-          <p class="mt-4 text-lg leading-relaxed text-muted-foreground">Famiglie, enti e servizi possono collaborare per sostenere chi può restare a casa e affiancare chi opera nelle strutture.</p>
+        <div>
+          <label for="profilo" class="block text-sm font-semibold">Profilo</label>
+          <select id="profilo" name="profilo" class="mt-1.5 w-full rounded-lg border border-border bg-background px-3.5 py-2.5 text-sm">
+            <option value="Famiglia">Famiglia / assistenza domiciliare</option>
+            <option value="RSA / Struttura">RSA / struttura sanitaria</option>
+            <option value="Ente pubblico">Ente pubblico / Comune / ASL</option>
+          </select>
         </div>
-        <div class="mt-10 grid gap-6 lg:grid-cols-3">
-          <article class="rounded-2xl border border-border bg-card p-6">
-            <h3 class="text-lg font-bold">Famiglie</h3>
-            <ul class="mt-4 space-y-2 text-sm text-muted-foreground">
-              <li>• Un supporto per chi può restare a casa propria</li>
-              <li>• Allerte ai familiari e dati consultabili a distanza</li>
-              <li>• Una scelta da valutare insieme al medico e a chi assiste</li>
-            </ul>
-          </article>
-          <article class="rounded-2xl border border-border bg-card p-6">
-            <h3 class="text-lg font-bold">Enti pubblici, Comuni e ASL</h3>
-            <ul class="mt-4 space-y-2 text-sm text-muted-foreground">
-              <li>• Supporto ai progetti di domiciliarità e monitoraggio sul territorio</li>
-              <li>• Allerte e dati consultabili dagli operatori incaricati</li>
-              <li>• Valutazione di bisogni, consenso e responsabilità operative</li>
-            </ul>
-          </article>
-          <article class="rounded-2xl border border-border bg-card p-6">
-            <h3 class="text-lg font-bold">RSA e strutture sanitarie</h3>
-            <ul class="mt-4 space-y-2 text-sm text-muted-foreground">
-              <li>• Supporto al lavoro del personale di cura e assistenza</li>
-              <li>• Monitoraggio discreto senza dispositivi indossabili</li>
-              <li>• Notifiche tempestive su eventi critici e presenza a letto</li>
-            </ul>
-          </article>
+        <div>
+          <label for="messaggio" class="block text-sm font-semibold">Messaggio</label>
+          <textarea id="messaggio" name="messaggio" rows="3" placeholder="Raccontaci brevemente le tue esigenze..." class="mt-1.5 w-full rounded-lg border border-border bg-background px-3.5 py-2.5 text-sm"></textarea>
         </div>
-      </div>
-    </section>
-
-    <section id="contatti" class="mx-auto max-w-4xl px-5 py-16 sm:py-20">
-      <div class="rounded-2xl border border-border bg-card p-6 sm:p-10">
-        <p class="text-sm font-semibold uppercase tracking-[0.16em] text-teal">Contatti</p>
-        <h2 class="mt-3 text-3xl font-extrabold tracking-tight text-foreground">Richiedi una demo</h2>
-        <p class="mt-3 text-muted-foreground">Medicleo è sviluppato da <strong>Evolve S.r.l.</strong> · Via Luigi Einaudi 54, 45100 Rovigo (RO).</p>
-        <div class="mt-6 grid gap-4 text-sm sm:grid-cols-2">
-          <div>Email: <a href="mailto:info@medicleo.com" class="font-semibold text-primary underline">info@medicleo.com</a></div>
-          <div>Telefono: <a href="tel:+390425090621" class="font-semibold text-primary underline">+39 0425 090621</a></div>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer class="border-t border-border bg-muted py-8 text-sm text-muted-foreground">
-    <div class="mx-auto flex max-w-6xl flex-col items-center justify-between gap-4 px-5 sm:flex-row">
-      <div class="flex items-center gap-2.5">
-        <img src="https://medicleo.com/assets/medicleo-logo-DnmoDSbt.webp" alt="Logo Medicleo" width="32" height="32" class="h-8 w-8">
-        <span>Medicleo · Evolve S.r.l. · P.IVA IT04597090234</span>
-      </div>
-      <p>Monitoraggio radar non invasivo per la sicurezza a domicilio.</p>
+        <button type="submit" class="inline-flex items-center justify-center rounded-full bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground shadow-elegant transition-all hover:bg-primary/90">Invia richiesta demo</button>
+        <p id="demo-feedback" class="text-sm text-teal"></p>
+      </form>
     </div>
-  </footer>
+  </div>
+</section>
+</main>
 
-  <script>
-    (function () {
-      const btn = document.getElementById('menu-mobile-btn');
-      const menu = document.getElementById('menu-mobile');
-      if (btn && menu) {
-        btn.addEventListener('click', () => {
-          const expanded = btn.getAttribute('aria-expanded') === 'true';
-          btn.setAttribute('aria-expanded', String(!expanded));
-          menu.classList.toggle('hidden', expanded);
-        });
-        menu.querySelectorAll('a').forEach(a => {
-          a.addEventListener('click', () => {
-            btn.setAttribute('aria-expanded', 'false');
-            menu.classList.add('hidden');
-          });
-        });
-      }
+<footer class="border-t border-border bg-background py-8 text-sm text-muted-foreground">
+<div class="mx-auto flex max-w-6xl flex-col items-center justify-between gap-4 px-5 sm:flex-row">
+  <div class="flex items-center gap-2.5">
+    <img src="https://medicleo.com/assets/medicleo-logo-DnmoDSbt.webp" alt="Logo Medicleo" width="32" height="32" class="h-8 w-8">
+    <span>Medicleo · Evolve S.r.l. · P.IVA IT04597090234</span>
+  </div>
+  <div class="flex flex-wrap items-center gap-4 text-xs">
+    <a href="#problema" class="hover:text-primary">Perché a casa</a>
+    <a href="#soluzione" class="hover:text-primary">La soluzione</a>
+    <a href="#risparmio" class="hover:text-primary">Il risparmio</a>
+    <a href="#faq" class="hover:text-primary">FAQ</a>
+    <a href="#contatti" class="hover:text-primary">Contatti</a>
+  </div>
+</div>
+</footer>
 
-      const rettaInput = document.getElementById('retta-mensile');
-      const casaInput = document.getElementById('costo-domicilio');
-      const out = document.getElementById('risparmio-output');
-      function updateCalc() {
-        if (!rettaInput || !casaInput || !out) return;
-        const retta = parseFloat(rettaInput.value);
-        const casa = parseFloat(casaInput.value);
-        if (Number.isNaN(retta) || Number.isNaN(casa)) {
-          out.textContent = 'La stima sarà disponibile dopo aver inserito entrambi i costi.';
-          return;
-        }
-        const diffMensile = retta - casa;
-        const diffAnnua = diffMensile * 12;
-        const diffTreAnni = diffAnnua * 3;
-        const fmt = (v) => new Intl.NumberFormat('it-IT', { style: 'currency', currency: 'EUR', maximumFractionDigits: 0 }).format(v);
-        if (diffMensile >= 0) {
-          out.innerHTML = `Differenza stimata a favore del domicilio: <strong>${fmt(diffMensile)}/mese</strong> · <strong>${fmt(diffAnnua)}/anno</strong> · <strong>${fmt(diffTreAnni)} in 3 anni</strong>.`;
-        } else {
-          out.innerHTML = `Con questi importi, la soluzione a domicilio costa in più: <strong>${fmt(Math.abs(diffMensile))}/mese</strong> · <strong>${fmt(Math.abs(diffAnnua))}/anno</strong> · <strong>${fmt(Math.abs(diffTreAnni))} in 3 anni</strong>.`;
-        }
-      }
-      if (rettaInput && casaInput) {
-        rettaInput.addEventListener('input', updateCalc);
-        casaInput.addEventListener('input', updateCalc);
-      }
+<script>
+(function () {
+  const btn = document.getElementById('menu-mobile-btn');
+  const menu = document.getElementById('menu-mobile');
+  if (btn && menu) {
+    btn.addEventListener('click', () => {
+      const expanded = btn.getAttribute('aria-expanded') === 'true';
+      btn.setAttribute('aria-expanded', String(!expanded));
+      menu.classList.toggle('hidden', expanded);
+    });
+    menu.querySelectorAll('a').forEach(a => {
+      a.addEventListener('click', () => {
+        btn.setAttribute('aria-expanded', 'false');
+        menu.classList.add('hidden');
+      });
+    });
+  }
 
-      const cookieBtn = document.getElementById('cookie-btn');
-      if (cookieBtn) {
-        cookieBtn.addEventListener('click', () => {
-          alert('Preferenze cookie: questo sito utilizza solo risorse tecniche essenziali.');
-        });
-      }
-    })();
-  </script>
+  const rettaInput = document.getElementById('retta-mensile');
+  const casaInput = document.getElementById('costo-domicilio');
+  const out = document.getElementById('risparmio-output');
+  function updateCalc() {
+    if (!rettaInput || !casaInput || !out) return;
+    const retta = parseFloat(rettaInput.value);
+    const casa = parseFloat(casaInput.value);
+    if (Number.isNaN(retta) || Number.isNaN(casa)) {
+      out.textContent = 'La stima sarà disponibile dopo aver inserito entrambi i costi.';
+      return;
+    }
+    const diffMensile = retta - casa;
+    const diffAnnua = diffMensile * 12;
+    const diffTreAnni = diffAnnua * 3;
+    const fmt = (v) => new Intl.NumberFormat('it-IT', { style: 'currency', currency: 'EUR', maximumFractionDigits: 0 }).format(v);
+    if (diffMensile >= 0) {
+      out.innerHTML = `Differenza stimata a favore del domicilio: <strong>${fmt(diffMensile)}/mese</strong> · <strong>${fmt(diffAnnua)}/anno</strong> · <strong>${fmt(diffTreAnni)} in 3 anni</strong>.`;
+    } else {
+      out.innerHTML = `Con questi importi, la soluzione a domicilio costa in più: <strong>${fmt(Math.abs(diffMensile))}/mese</strong> · <strong>${fmt(Math.abs(diffAnnua))}/anno</strong> · <strong>${fmt(Math.abs(diffTreAnni))} in 3 anni</strong>.`;
+    }
+  }
+  if (rettaInput && casaInput) {
+    rettaInput.addEventListener('input', updateCalc);
+    casaInput.addEventListener('input', updateCalc);
+  }
+
+  const form = document.getElementById('demo-form');
+  const feedback = document.getElementById('demo-feedback');
+  if (form && feedback) {
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const nome = document.getElementById('nome')?.value || '';
+      feedback.textContent = `Richiesta preparata per ${nome}. Puoi anche scrivere direttamente a info@medicleo.com o chiamare +39 0425 090621.`;
+    });
+  }
+
+  const cookieBtn = document.getElementById('cookie-btn');
+  if (cookieBtn) {
+    cookieBtn.addEventListener('click', () => {
+      alert('Preferenze cookie: questo sito utilizza solo risorse tecniche essenziali.');
+    });
+  }
+})();
+</script>
 </body>
 </html>
