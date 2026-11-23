@@ -1,21 +1,58 @@
-/* Ajustes visuais refinados para o Medicleo */
 :root {
-  --radius: 0.75rem;
+    --radius: .875rem;
+    --background: #09090b;
+    --foreground: #f4f4f5;
+    --card: #111114;
+    --card-foreground: #f4f4f5;
+    --popover: #111114;
+    --popover-foreground: #f4f4f5;
+    --primary: #f97316;
+    --primary-foreground: #09090b;
+    --secondary: #1c1917;
+    --secondary-foreground: #fb923c;
+    --muted: #141418;
+    --muted-foreground: #a1a1aa;
+    --accent: #27170c;
+    --accent-foreground: #fdba74;
+    --teal: #fb923c;
+    --teal-soft: #27170c;
+    --warm: #f97316;
+    --warm-soft: #29160a;
+    --ink: #050506;
+    --ink-foreground: #fafafa;
+    --destructive: #ef4444;
+    --destructive-foreground: #ffffff;
+    --border: #27272a;
+    --input: #3f3f46;
+    --ring: #f97316;
+    --gradient-hero: radial-gradient(60rem 30rem at 85% 0%, rgba(249, 115, 22, 0.22), transparent 60%), radial-gradient(40rem 30rem at 0% 30%, rgba(234, 88, 12, 0.14), transparent 60%);
+    --gradient-band: linear-gradient(120deg, #09090b, #ea580c);
+    --shadow-elegant-v: 0 14px 34px -14px rgba(249, 115, 22, 0.45);
+    --shadow-soft-v: 0 10px 40px -18px rgba(0, 0, 0, 0.75);
 }
 
-header {
-  backdrop-filter: blur(14px);
-}
+/* Mapeamento para classes utilitárias usadas no HTML */
+.bg-background { background-color: var(--background); }
+.text-foreground { color: var(--foreground); }
+.bg-card { background-color: var(--card); color: var(--card-foreground); }
+.bg-muted { background-color: var(--muted); }
+.text-muted-foreground { color: var(--muted-foreground); }
+.bg-secondary { background-color: var(--secondary); color: var(--secondary-foreground); }
+.bg-primary { background-color: var(--primary); color: var(--primary-foreground); }
+.text-primary { color: var(--primary); }
+.text-primary-foreground { color: var(--primary-foreground); }
+.text-teal { color: var(--teal); }
+.bg-ink { background-color: var(--ink); color: var(--ink-foreground); }
+.text-ink-foreground { color: var(--ink-foreground); }
+.border-border { border-color: var(--border); }
+.shadow-soft { box-shadow: var(--shadow-soft-v); }
+.shadow-elegant { box-shadow: var(--shadow-elegant-v); }
 
-main section {
-  scroll-margin-top: 5.5rem;
+/* Reforços laranja e preto */
+a, button {
+  outline-color: var(--primary);
 }
-
-article,
-.rounded-2xl {
-  transition: transform 0.22s ease, box-shadow 0.22s ease, border-color 0.22s ease;
-}
-
-article:hover {
-  transform: translateY(-2px);
+::selection {
+  background-color: #f97316;
+  color: #09090b;
 }
