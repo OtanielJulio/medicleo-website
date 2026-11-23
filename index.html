@@ -296,71 +296,166 @@ Cookie
         <p class="text-sm font-semibold uppercase tracking-[0.16em] text-teal">Domande frequenti</p>
         <h2 class="mt-3 text-3xl font-extrabold tracking-tight text-foreground sm:text-4xl">Hai qualche dubbio?</h2>
       </div>
-      <div class="mt-10 space-y-4">
-        <article class="rounded-2xl border border-border bg-card p-6">
-          <h3 class="font-bold text-primary">Medicleo può evitare l’ingresso in RSA?</h3>
-          <p class="mt-3 leading-relaxed text-foreground">Può aiutare a restare a casa più a lungo quando le condizioni lo consentono, rimandando o evitando un ingresso non necessario. Non sostituisce una RSA per chi ha bisogno di assistenza sanitaria continuativa e non garantisce di evitare ricoveri: la decisione spetta alla famiglia insieme ai medici, valutando i bisogni e le risorse disponibili.</p>
-        </article>
-        <article class="rounded-2xl border border-border bg-card p-6">
-          <h3 class="font-bold text-primary">Quanto si risparmia rispetto a una struttura?</h3>
-          <p class="mt-3 leading-relaxed text-foreground">Dipende dalla retta, dall’assistenza necessaria a domicilio e dagli altri costi. Il calcolatore nella sezione Il risparmio confronta gli importi della tua situazione su base mensile, annua e su tre anni. Non è un risparmio garantito: includi anche Medicleo dopo aver richiesto una proposta.</p>
-          <a href="#risparmio" class="mt-4 inline-flex items-center gap-2 font-semibold text-primary underline underline-offset-4 hover:text-foreground">Vai al calcolatore dei costi</a>
-        </article>
-        <details class="rounded-2xl border border-border bg-card p-5">
-          <summary class="cursor-pointer font-bold text-primary">È utile anche per enti pubblici e Comuni?</summary>
-          <p class="mt-3 leading-relaxed text-foreground">Può affiancare progetti di assistenza domiciliare integrata e monitoraggio di anziani soli sul territorio, mettendo le allerte a disposizione degli operatori incaricati. Ogni progetto richiede una valutazione dei bisogni, del consenso della persona, delle responsabilità di intervento e dell’organizzazione del servizio.</p>
+      <div class="faq-accordion mt-10 space-y-3">
+        <details class="faq-item border border-border bg-card">
+          <summary class="faq-trigger flex cursor-pointer list-none items-center justify-between gap-4 px-5 py-4 font-bold">
+            <span>Medicleo può evitare l’ingresso in RSA?</span>
+            <span class="faq-arrow shrink-0 text-xl leading-none" aria-hidden="true">⌄</span>
+          </summary>
+          <div class="faq-panel px-5 py-4">
+            <p class="leading-relaxed">Può aiutare a restare a casa più a lungo quando le condizioni lo consentono, rimandando o evitando un ingresso non necessario. Non sostituisce una RSA per chi ha bisogno di assistenza sanitaria continuativa e non garantisce di evitare ricoveri: la decisione spetta alla famiglia insieme ai medici, valutando i bisogni e le risorse disponibili.</p>
+          </div>
         </details>
-        <details class="rounded-2xl border border-border bg-card p-5">
-          <summary class="cursor-pointer font-bold text-primary">Serve un dispositivo indossabile?</summary>
-          <p class="mt-3 leading-relaxed text-foreground">No. Medicleo utilizza un sensore radar installato nella stanza: la persona monitorata non deve indossare braccialetti, cerotti o altri dispositivi, e nulla viene posizionato sul letto.</p>
+
+        <details class="faq-item border border-border bg-card">
+          <summary class="faq-trigger flex cursor-pointer list-none items-center justify-between gap-4 px-5 py-4 font-bold">
+            <span>Quanto si risparmia rispetto a una struttura?</span>
+            <span class="faq-arrow shrink-0 text-xl leading-none" aria-hidden="true">⌄</span>
+          </summary>
+          <div class="faq-panel px-5 py-4">
+            <p class="leading-relaxed">Dipende dalla retta, dall’assistenza necessaria a domicilio e dagli altri costi. Il calcolatore nella sezione Il risparmio confronta gli importi della tua situazione su base mensile, annua e su tre anni. Non è un risparmio garantito: includi anche Medicleo dopo aver richiesto una proposta.</p>
+            <a href="#risparmio" class="faq-calc-link mt-4 inline-flex items-center gap-2 font-semibold underline underline-offset-4">Vai al calcolatore dei costi</a>
+          </div>
         </details>
-        <details class="rounded-2xl border border-border bg-card p-5">
-          <summary class="cursor-pointer font-bold text-primary">Come vengono protetti i dati?</summary>
-          <p class="mt-3 leading-relaxed text-foreground">Il sistema non utilizza telecamere né registra immagini. I dati rilevati sono accessibili solo alle persone autorizzate, come il personale della struttura o i familiari indicati, e sono trattati nel rispetto della normativa sulla protezione dei dati personali.</p>
+
+        <details class="faq-item border border-border bg-card">
+          <summary class="faq-trigger flex cursor-pointer list-none items-center justify-between gap-4 px-5 py-4 font-bold">
+            <span>È utile anche per enti pubblici e Comuni?</span>
+            <span class="faq-arrow shrink-0 text-xl leading-none" aria-hidden="true">⌄</span>
+          </summary>
+          <div class="faq-panel px-5 py-4">
+            <p class="leading-relaxed">Può affiancare progetti di assistenza domiciliare integrata e monitoraggio di anziani soli sul territorio, mettendo le allerte a disposizione degli operatori incaricati. Ogni progetto richiede una valutazione dei bisogni, del consenso della persona, delle responsabilità di intervento e dell’organizzazione del servizio.</p>
+          </div>
         </details>
-        <details class="rounded-2xl border border-border bg-card p-5">
-          <summary class="cursor-pointer font-bold text-primary">Funziona anche di notte o al buio?</summary>
-          <p class="mt-3 leading-relaxed text-foreground">Sì. Il radar non ha bisogno di luce per funzionare, quindi il monitoraggio prosegue anche di notte, quando la persona riposa, senza disturbarne il sonno.</p>
+
+        <details class="faq-item border border-border bg-card">
+          <summary class="faq-trigger flex cursor-pointer list-none items-center justify-between gap-4 px-5 py-4 font-bold">
+            <span>Serve un dispositivo indossabile?</span>
+            <span class="faq-arrow shrink-0 text-xl leading-none" aria-hidden="true">⌄</span>
+          </summary>
+          <div class="faq-panel px-5 py-4">
+            <p class="leading-relaxed">No. Medicleo utilizza un sensore radar installato nella stanza: la persona monitorata non deve indossare braccialetti, cerotti o altri dispositivi, e nulla viene posizionato sul letto.</p>
+          </div>
         </details>
-        <details class="rounded-2xl border border-border bg-card p-5">
-          <summary class="cursor-pointer font-bold text-primary">Cosa succede in caso di allerta?</summary>
-          <p class="mt-3 leading-relaxed text-foreground">Quando il sistema rileva un evento critico, come una caduta o l'abbandono del letto, invia una notifica alle persone incaricate, che possono intervenire tempestivamente e consultare i dati in tempo reale.</p>
+
+        <details class="faq-item border border-border bg-card">
+          <summary class="faq-trigger flex cursor-pointer list-none items-center justify-between gap-4 px-5 py-4 font-bold">
+            <span>Come vengono protetti i dati?</span>
+            <span class="faq-arrow shrink-0 text-xl leading-none" aria-hidden="true">⌄</span>
+          </summary>
+          <div class="faq-panel px-5 py-4">
+            <p class="leading-relaxed">Il sistema non utilizza telecamere né registra immagini. I dati rilevati sono accessibili solo alle persone autorizzate, come il personale della struttura o i familiari indicati, nel rispetto della normativa sulla protezione dei dati personali.</p>
+          </div>
         </details>
-        <details class="rounded-2xl border border-border bg-card p-5">
-          <summary class="cursor-pointer font-bold text-primary">Come si installa?</summary>
-          <p class="mt-3 leading-relaxed text-foreground">Il sensore viene installato nella stanza, senza alcun contatto con la persona e senza modificare l'arredamento. Durante la demo ti illustriamo le modalità di installazione più adatte al tuo caso.</p>
+
+        <details class="faq-item border border-border bg-card">
+          <summary class="faq-trigger flex cursor-pointer list-none items-center justify-between gap-4 px-5 py-4 font-bold">
+            <span>Funziona anche di notte o al buio?</span>
+            <span class="faq-arrow shrink-0 text-xl leading-none" aria-hidden="true">⌄</span>
+          </summary>
+          <div class="faq-panel px-5 py-4">
+            <p class="leading-relaxed">Sì. Il radar non ha bisogno di luce per funzionare, quindi il monitoraggio prosegue anche di notte, quando la persona riposa, senza disturbarne il sonno.</p>
+          </div>
         </details>
-        <details class="rounded-2xl border border-border bg-card p-5">
-          <summary class="cursor-pointer font-bold text-primary">Per chi è adatto Medicleo?</summary>
-          <p class="mt-3 leading-relaxed text-foreground">È pensato per RSA e strutture sanitarie che vogliono un supporto al lavoro del personale, e per le famiglie che assistono un anziano a domicilio e desiderano maggiore serenità. Medicleo è un sistema di monitoraggio e allerta, non uno strumento di diagnosi.</p>
+
+        <details class="faq-item border border-border bg-card">
+          <summary class="faq-trigger flex cursor-pointer list-none items-center justify-between gap-4 px-5 py-4 font-bold">
+            <span>Cosa succede in caso di allerta?</span>
+            <span class="faq-arrow shrink-0 text-xl leading-none" aria-hidden="true">⌄</span>
+          </summary>
+          <div class="faq-panel px-5 py-4">
+            <p class="leading-relaxed">Quando il sistema rileva un evento critico, come una caduta o l'abbandono del letto, invia una notifica alle persone incaricate, che possono intervenire tempestivamente e consultare i dati in tempo reale.</p>
+          </div>
         </details>
-        <details class="rounded-2xl border border-border bg-card p-5">
-          <summary class="cursor-pointer font-bold text-primary">Serve una connessione internet?</summary>
-          <p class="mt-3 leading-relaxed text-foreground">Sì. Per inviare le allerte e rendere consultabili i dati a distanza il sensore ha bisogno di una connessione alla rete. Durante la demo verifichiamo insieme la soluzione più adatta all'ambiente in cui verrà installato.</p>
+
+        <details class="faq-item border border-border bg-card">
+          <summary class="faq-trigger flex cursor-pointer list-none items-center justify-between gap-4 px-5 py-4 font-bold">
+            <span>Come si installa?</span>
+            <span class="faq-arrow shrink-0 text-xl leading-none" aria-hidden="true">⌄</span>
+          </summary>
+          <div class="faq-panel px-5 py-4">
+            <p class="leading-relaxed">Il sensore viene installato nella stanza, senza alcun contatto con la persona e senza modificare l'arredamento. Durante la demo ti illustriamo le modalità di installazione più adatte al tuo caso.</p>
+          </div>
         </details>
-        <details class="rounded-2xl border border-border bg-card p-5">
-          <summary class="cursor-pointer font-bold text-primary">Il sistema usa telecamere o microfoni?</summary>
-          <p class="mt-3 leading-relaxed text-foreground">No. Medicleo si basa su un sensore radar: non riprende immagini e non registra audio. Per questo può essere usato anche in camera da letto e in bagno senza ledere la riservatezza della persona.</p>
+
+        <details class="faq-item border border-border bg-card">
+          <summary class="faq-trigger flex cursor-pointer list-none items-center justify-between gap-4 px-5 py-4 font-bold">
+            <span>Per chi è adatto Medicleo?</span>
+            <span class="faq-arrow shrink-0 text-xl leading-none" aria-hidden="true">⌄</span>
+          </summary>
+          <div class="faq-panel px-5 py-4">
+            <p class="leading-relaxed">È pensato per RSA e strutture sanitarie che vogliono un supporto al lavoro del personale, e per le famiglie che assistono un anziano a domicilio e desiderano maggiore serenità. Medicleo è un sistema di monitoraggio e allerta, non uno strumento di diagnosi.</p>
+          </div>
         </details>
-        <details class="rounded-2xl border border-border bg-card p-5">
-          <summary class="cursor-pointer font-bold text-primary">Cosa vede il familiare o l'operatore?</summary>
-          <p class="mt-3 leading-relaxed text-foreground">Chi è autorizzato può consultare l'andamento dei parametri monitorati, come frequenza cardiaca, frequenza respiratoria, qualità del sonno e presenza a letto, e riceve le notifiche in caso di evento critico.</p>
+
+        <details class="faq-item border border-border bg-card">
+          <summary class="faq-trigger flex cursor-pointer list-none items-center justify-between gap-4 px-5 py-4 font-bold">
+            <span>Serve una connessione internet?</span>
+            <span class="faq-arrow shrink-0 text-xl leading-none" aria-hidden="true">⌄</span>
+          </summary>
+          <div class="faq-panel px-5 py-4">
+            <p class="leading-relaxed">Sì. Per inviare le allerte e rendere consultabili i dati a distanza il sensore ha bisogno di una connessione alla rete. Durante la demo verifichiamo insieme la soluzione più adatta all'ambiente in cui verrà installato.</p>
+          </div>
         </details>
-        <details class="rounded-2xl border border-border bg-card p-5">
-          <summary class="cursor-pointer font-bold text-primary">Funziona se nella stanza ci sono altre persone o animali?</summary>
-          <p class="mt-3 leading-relaxed text-foreground">Il sensore è pensato per monitorare una persona nella sua stanza. Se l'ambiente è condiviso, durante il sopralluogo valutiamo posizionamento e configurazione più adatti.</p>
+
+        <details class="faq-item border border-border bg-card">
+          <summary class="faq-trigger flex cursor-pointer list-none items-center justify-between gap-4 px-5 py-4 font-bold">
+            <span>Il sistema usa telecamere o microfoni?</span>
+            <span class="faq-arrow shrink-0 text-xl leading-none" aria-hidden="true">⌄</span>
+          </summary>
+          <div class="faq-panel px-5 py-4">
+            <p class="leading-relaxed">No. Medicleo si basa su un sensore radar: non riprende immagini e non registra audio. Per questo può essere usato anche in camera da letto e in bagno senza ledere la riservatezza della persona.</p>
+          </div>
         </details>
-        <details class="rounded-2xl border border-border bg-card p-5">
-          <summary class="cursor-pointer font-bold text-primary">Medicleo sostituisce il personale o la badante?</summary>
-          <p class="mt-3 leading-relaxed text-foreground">No. È un supporto a chi assiste: aiuta a sapere quando serve intervenire, ma non sostituisce la presenza e il lavoro delle persone che si prendono cura dell'anziano.</p>
+
+        <details class="faq-item border border-border bg-card">
+          <summary class="faq-trigger flex cursor-pointer list-none items-center justify-between gap-4 px-5 py-4 font-bold">
+            <span>Cosa vede il familiare o l'operatore?</span>
+            <span class="faq-arrow shrink-0 text-xl leading-none" aria-hidden="true">⌄</span>
+          </summary>
+          <div class="faq-panel px-5 py-4">
+            <p class="leading-relaxed">Chi è autorizzato può consultare l'andamento dei parametri monitorati, come frequenza cardiaca, frequenza respiratoria, qualità del sonno e presenza a letto, e riceve le notifiche in caso di evento critico.</p>
+          </div>
         </details>
-        <details class="rounded-2xl border border-border bg-card p-5">
-          <summary class="cursor-pointer font-bold text-primary">Medicleo fa diagnosi?</summary>
-          <p class="mt-3 leading-relaxed text-foreground">No. Medicleo è un sistema di monitoraggio e allerta: segnala variazioni ed eventi a chi assiste. Le valutazioni sulla salute restano sempre al medico curante o al personale sanitario.</p>
+
+        <details class="faq-item border border-border bg-card">
+          <summary class="faq-trigger flex cursor-pointer list-none items-center justify-between gap-4 px-5 py-4 font-bold">
+            <span>Funziona se nella stanza ci sono altre persone o animali?</span>
+            <span class="faq-arrow shrink-0 text-xl leading-none" aria-hidden="true">⌄</span>
+          </summary>
+          <div class="faq-panel px-5 py-4">
+            <p class="leading-relaxed">Il sensore è pensato per monitorare una persona nella sua stanza. Se l'ambiente è condiviso, durante il sopralluogo valutiamo posizionamento e configurazione più adatti.</p>
+          </div>
         </details>
-        <details class="rounded-2xl border border-border bg-card p-5">
-          <summary class="cursor-pointer font-bold text-primary">Si può usare a casa di un anziano che vive da solo?</summary>
-          <p class="mt-3 leading-relaxed text-foreground">Sì, è uno dei casi per cui Medicleo è pensato: la persona continua a vivere a casa propria e i familiari ricevono una notifica se qualcosa non va, anche quando sono lontani.</p>
+
+        <details class="faq-item border border-border bg-card">
+          <summary class="faq-trigger flex cursor-pointer list-none items-center justify-between gap-4 px-5 py-4 font-bold">
+            <span>Medicleo sostituisce il personale o la badante?</span>
+            <span class="faq-arrow shrink-0 text-xl leading-none" aria-hidden="true">⌄</span>
+          </summary>
+          <div class="faq-panel px-5 py-4">
+            <p class="leading-relaxed">No. È un supporto a chi assiste: aiuta a sapere quando serve intervenire, ma non sostituisce la presenza e il lavoro delle persone che si prendono cura dell'anziano.</p>
+          </div>
+        </details>
+
+        <details class="faq-item border border-border bg-card">
+          <summary class="faq-trigger flex cursor-pointer list-none items-center justify-between gap-4 px-5 py-4 font-bold">
+            <span>Medicleo fa diagnosi?</span>
+            <span class="faq-arrow shrink-0 text-xl leading-none" aria-hidden="true">⌄</span>
+          </summary>
+          <div class="faq-panel px-5 py-4">
+            <p class="leading-relaxed">No. Medicleo è un sistema di monitoraggio e allerta: segnala variazioni ed eventi a chi assiste. Le valutazioni sulla salute restano sempre al medico curante o al personale sanitario.</p>
+          </div>
+        </details>
+
+        <details class="faq-item border border-border bg-card">
+          <summary class="faq-trigger flex cursor-pointer list-none items-center justify-between gap-4 px-5 py-4 font-bold">
+            <span>Si può usare a casa di un anziano che vive da solo?</span>
+            <span class="faq-arrow shrink-0 text-xl leading-none" aria-hidden="true">⌄</span>
+          </summary>
+          <div class="faq-panel px-5 py-4">
+            <p class="leading-relaxed">Sì, è uno dei casi per cui Medicleo è pensato: la persona continua a vivere a casa propria e i familiari ricevono una notifica se qualcosa non va, anche quando sono lontani.</p>
+          </div>
         </details>
       </div>
     </section>

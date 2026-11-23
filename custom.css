@@ -128,3 +128,50 @@ p, li, label, summary, input, select, textarea, button, a {
 .text-lg {
     font-size: 1.45rem !important;
 }
+
+/* Acordeão FAQ com seta */
+.faq-item {
+    border-radius: 0 !important;
+    border: 2px solid #f97316 !important;
+    background-color: #0a0a0a !important;
+    overflow: hidden;
+}
+
+.faq-trigger {
+    display: flex !important;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #0a0a0a !important;
+    color: #fff7ed !important;
+    user-select: none;
+}
+
+.faq-trigger::-webkit-details-marker {
+    display: none;
+}
+
+.faq-item[open] .faq-trigger {
+    background-color: #f97316 !important;
+    color: #000000 !important;
+}
+
+.faq-arrow {
+    display: inline-block;
+    transition: transform 0.2s ease;
+    color: #f97316 !important;
+}
+
+.faq-item[open] .faq-arrow {
+    transform: rotate(180deg);
+    color: #000000 !important;
+}
+
+.faq-panel {
+    background-color: #000000 !important;
+    color: #fff7ed !important;
+    border-top: 2px solid #f97316 !important;
+}
+
+.faq-calc-link {
+    color: #f97316 !important;
+}
