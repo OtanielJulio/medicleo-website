@@ -83,3 +83,48 @@ input::placeholder, textarea::placeholder {
     background-color: #f97316 !important;
     color: #000000 !important;
 }
+
+/* Escala tipográfica ampliada */
+html {
+    font-size: 17px !important;
+}
+
+body {
+    font-size: 1.05rem !important;
+    line-height: 1.7 !important;
+}
+
+h1 {
+    font-size: clamp(2.25rem, 4.5vw, 3.5rem) !important;
+    line-height: 1.15 !important;
+}
+
+h2 {
+    font-size: clamp(1.75rem, 3.2vw, 2.5rem) !important;
+    line-height: 1.22 !important;
+}
+
+h3 {
+    font-size: clamp(1.2rem, 1.8vw, 1.45rem) !important;
+    line-height: 1.35 !important;
+}
+
+p, li, label, summary, input, select, textarea, button, a {
+    font-size: max(1rem, 1em) !important;
+}
+
+.text-xs {
+    font-size: 0.9rem !important;
+}
+
+.text-sm {
+    font-size: 1rem !important;
+}
+
+.text-base {
+    font-size: 1.125rem !important;
+}
+
+.text-lg {
+    font-size: 1.25rem !important;
+}
