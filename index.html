@@ -109,65 +109,7 @@
     <!-- =========================================================
          STICKY ARCHITECTURAL NAVIGATION BAR
     ========================================================== -->
-    <header class="sticky top-0 z-50 bg-alabaster/90 backdrop-blur-xl border-b border-warmStone">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex items-center justify-between h-20">
-                
-                <!-- Brand Logo -->
-                <a href="#" class="flex items-center gap-3 group focus:outline-none"><img src="https://medicleo.com/assets/medicleo-logo-DnmoDSbt.webp" alt="Logo Medicleo" width="44" height="44" class="h-11 w-11" onerror="this.style.display='none';if(this.nextElementSibling)this.nextElementSibling.style.display='inline-flex';"><span style="display:none;align-items:center;gap:8px;">
-                    <div class="w-10 h-10 rounded-xl bg-clinicalTeal text-white flex items-center justify-center shadow-sm group-hover:bg-sageTeal transition-colors">
-                        <!-- Radar Pulse Brand Icon -->
-                        <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                            <circle cx="12" cy="12" r="2.5" fill="currentColor" stroke="none"/>
-                            <path d="M16.24 7.76a6 6 0 0 1 0 8.49m-8.48-.01a6 6 0 0 1 0-8.49m11.31-2.82a10 10 0 0 1 0 14.14m-14.14 0a10 10 0 0 1 0-14.14" stroke-width="2" stroke-linecap="round"/>
-                        </svg>
-                    </div>
-                    <span class="font-sans font-extrabold text-xl tracking-tight text-clinicalTeal">Medicleo</span>
-                </span></a>
-
-                <!-- Desktop Navigation (Exact 6 Links) -->
-                <nav class="hidden lg:flex items-center gap-1 xl:gap-2" aria-label="Navigazione principale">
-                    <a href="#problema" class="px-3.5 py-2 rounded-xl text-sm font-semibold text-inkDark/80 hover:text-clinicalTeal hover:bg-clinicalTeal/5 transition-colors">Perché a casa</a>
-                    <a href="#soluzione" class="px-3.5 py-2 rounded-xl text-sm font-semibold text-inkDark/80 hover:text-clinicalTeal hover:bg-clinicalTeal/5 transition-colors">La soluzione</a>
-                    <a href="#per-chi" class="px-3.5 py-2 rounded-xl text-sm font-semibold text-inkDark/80 hover:text-clinicalTeal hover:bg-clinicalTeal/5 transition-colors">Per chi</a>
-                    <a href="#risparmio" class="px-3.5 py-2 rounded-xl text-sm font-semibold text-inkDark/80 hover:text-clinicalTeal hover:bg-clinicalTeal/5 transition-colors">Il risparmio</a>
-                    <a href="#assistenza-domiciliare" class="px-3.5 py-2 rounded-xl text-sm font-semibold text-inkDark/80 hover:text-clinicalTeal hover:bg-clinicalTeal/5 transition-colors">Assistenza a domicilio</a>
-                    <a href="#contatti" class="px-3.5 py-2 rounded-xl text-sm font-semibold text-inkDark/80 hover:text-clinicalTeal hover:bg-clinicalTeal/5 transition-colors">Contatti</a>
-                </nav>
-
-                <!-- Primary CTA + Mobile Toggle -->
-                <div class="flex items-center gap-3">
-                    <a href="#contatti" class="hidden sm:inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-clinicalTeal hover:bg-sageTeal text-white text-sm font-semibold shadow-sm transition-colors">
-                        <span>Richiedi una demo</span>
-                    </a>
-
-                    <button id="mobile-menu-btn" aria-label="Apri menu" class="lg:hidden p-2.5 rounded-xl bg-white border border-warmStone text-clinicalTeal hover:bg-sandNote transition-colors">
-                        <svg id="mobile-icon-open" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
-                        </svg>
-                        <svg id="mobile-icon-close" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
-                        </svg>
-                    </button>
-                </div>
-            </div>
-        </div>
-
-        <!-- Mobile Drawer -->
-        <div id="mobile-drawer" class="hidden lg:hidden bg-alabaster border-t border-warmStone px-4 pt-3 pb-6 space-y-1">
-            <a href="#problema" class="mobile-link block px-4 py-3 rounded-xl text-base font-semibold text-inkDark hover:bg-white">Perché a casa</a>
-            <a href="#soluzione" class="mobile-link block px-4 py-3 rounded-xl text-base font-semibold text-inkDark hover:bg-white">La soluzione</a>
-            <a href="#per-chi" class="mobile-link block px-4 py-3 rounded-xl text-base font-semibold text-inkDark hover:bg-white">Per chi</a>
-            <a href="#risparmio" class="mobile-link block px-4 py-3 rounded-xl text-base font-semibold text-inkDark hover:bg-white">Il risparmio</a>
-            <a href="#assistenza-domiciliare" class="mobile-link block px-4 py-3 rounded-xl text-base font-semibold text-inkDark hover:bg-white">Assistenza a domicilio</a>
-            <a href="#contatti" class="mobile-link block px-4 py-3 rounded-xl text-base font-semibold text-inkDark hover:bg-white">Contatti</a>
-            <div class="pt-3">
-                <a href="#contatti" class="mobile-link w-full py-3.5 px-5 rounded-xl bg-clinicalTeal text-white font-semibold text-center block">
-                    Richiedi una demo
-                </a>
-            </div>
-        </div>
-    </header>
+    <header class="sticky top-0 z-40 border-b border-border/70 bg-background/85 backdrop-blur-md"><div class="mx-auto flex h-18 max-w-6xl items-center justify-between gap-4 px-5 py-3"><a href="#" class="flex items-center gap-2.5 rounded-md" aria-label="Medicleo, torna alla home"><img src="https://medicleo.com/assets/medicleo-logo-DnmoDSbt.webp" alt="Logo Medicleo" width="44" height="44" class="h-11 w-11" onerror="this.style.display='none';if(this.nextElementSibling)this.nextElementSibling.style.display='inline-flex';"><span class="text-xl font-extrabold tracking-tight text-primary">Medicleo</span></a><nav aria-label="Menu principale" class="hidden lg:block"><ul class="flex items-center gap-7 text-sm font-medium"><li><a href="#problema" class="rounded text-foreground/80 transition-colors hover:text-primary">Perché a casa</a></li><li><a href="#soluzione" class="rounded text-foreground/80 transition-colors hover:text-primary">La soluzione</a></li><li><a href="#per-chi" class="rounded text-foreground/80 transition-colors hover:text-primary">Per chi</a></li><li><a href="#risparmio" class="rounded text-foreground/80 transition-colors hover:text-primary">Il risparmio</a></li><li><a href="#assistenza-domiciliare" class="rounded text-foreground/80 transition-colors hover:text-primary">Assistenza a domicilio</a></li><li><a href="#contatti" class="rounded text-foreground/80 transition-colors hover:text-primary">Contatti</a></li></ul></nav><div class="flex items-center gap-2"><a href="#contatti" class="items-center justify-center gap-2 whitespace-nowrap text-sm font-medium cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 disabled:cursor-not-allowed [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 rounded-full bg-primary text-primary-foreground shadow-elegant hover:bg-primary/90 hover:-translate-y-0.5 transition-all h-9 px-4 py-2 hidden sm:inline-flex">Richiedi una demo</a><button id="menu-mobile-btn" class="gap-2 whitespace-nowrap text-sm font-medium cursor-pointer transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 disabled:cursor-not-allowed [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 hover:bg-accent hover:text-accent-foreground inline-flex h-10 w-10 items-center justify-center rounded-full text-primary lg:hidden" type="button" aria-expanded="false" aria-controls="menu-mobile" aria-label="Apri menu"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-menu h-5 w-5" aria-hidden="true"><path d="M4 5h16"></path><path d="M4 12h16"></path><path d="M4 19h16"></path></svg></button></div></div><div id="menu-mobile" class="hidden border-t border-border/70 bg-background px-5 py-4 lg:hidden"><ul class="flex flex-col gap-3 text-sm font-medium"><li><a href="#problema" class="block rounded py-1 text-foreground/80 hover:text-primary">Perché a casa</a></li><li><a href="#soluzione" class="block rounded py-1 text-foreground/80 hover:text-primary">La soluzione</a></li><li><a href="#per-chi" class="block rounded py-1 text-foreground/80 hover:text-primary">Per chi</a></li><li><a href="#risparmio" class="block rounded py-1 text-foreground/80 hover:text-primary">Il risparmio</a></li><li><a href="#assistenza-domiciliare" class="block rounded py-1 text-foreground/80 hover:text-primary">Assistenza a domicilio</a></li><li><a href="#contatti" class="block rounded py-1 text-foreground/80 hover:text-primary">Contatti</a></li></ul></div></header>
 
     <main id="main-content">
 
